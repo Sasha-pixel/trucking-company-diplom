@@ -20,7 +20,7 @@ tesler:
     fields:
       include-packages:
         - io.tesler.core.ui.model.json.field.subtypes
-        - ru.filit.notifications.conf.tesler.meta
+        - com.example.truck.business.service.util.meta
   api:
     path: /api/v1
     use-servlet-context-path: false
