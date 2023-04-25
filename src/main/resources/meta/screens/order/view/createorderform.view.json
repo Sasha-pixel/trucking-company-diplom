@@ -1,0 +1,21 @@
+{
+  "name": "createorderform",
+  "title": "Список заказов",
+  "template": "DashboardView",
+  "url": "/screen/order/view/createorderform",
+  "widgets": [
+    {
+      "widgetName": "SecondLevelMenu",
+      "position": 0,
+      "gridWidth": 24
+    },
+    {
+      "widgetName": "CreateOrderForm",
+      "position": 1,
+      "gridWidth": 24
+    }
+  ],
+  "rolesAllowed": [
+    "TESLER_USER"
+  ]
+}

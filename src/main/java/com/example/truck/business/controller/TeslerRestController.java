@@ -1,11 +1,14 @@
 package com.example.truck.business.controller;
 
+import lombok.Getter;
+
+import org.springframework.stereotype.Component;
+
+import com.example.truck.business.service.OrderService;
 import io.tesler.core.crudma.bc.BcIdentifier;
 import io.tesler.core.crudma.bc.EnumBcIdentifier;
 import io.tesler.core.crudma.bc.impl.AbstractEnumBcSupplier;
 import io.tesler.core.crudma.bc.impl.BcDescription;
-import lombok.Getter;
-import org.springframework.stereotype.Component;
 
 /**
  * This is actually an analog of a usual @RestController.
@@ -19,7 +22,9 @@ public enum TeslerRestController implements EnumBcIdentifier {
 
 	// @formatter:on
 
-	;
+	orderList(OrderService.class),
+		createOrderForm(OrderService.class),
+		editOrderForm(orderList, OrderService.class);
 
 	// @formatter:on
 

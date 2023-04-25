@@ -1,0 +1,24 @@
+{
+  "name": "order",
+  "title": "Заказы",
+  "order": 1,
+  "primaryViewName": "orderlist",
+  "primaryViews": [
+    "orderlist"
+  ],
+  "navigation": {
+    "menu": [
+      {
+        "viewName": "orderlist"
+      },
+      {
+        "viewName": "createorderform",
+        "hidden": true
+      },
+      {
+        "viewName": "editorderform",
+        "hidden": true
+      }
+    ]
+  }
+}

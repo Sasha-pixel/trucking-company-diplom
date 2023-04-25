@@ -233,7 +233,7 @@
       <column defaultValueNumeric="1" name="LAST_UPD_BY_USER_ID" type="NUMBER(19, 0)">
         <constraints nullable="false"/>
       </column>
-      <column defaultValueNumeric="0" name="ADDITION_FLG" remarks="Вспомогательный" type="NUMBER(1, 0)"/>
+      <column defaultValueNumeric="0" name="ADDITION_FLG" remarks="Вспомогательный" type="BOOLEAN"/>
       <column name="DICTIONARY_TYPE_ID" type="NUMBER(19, 0)">
         <constraints nullable="false"/>
       </column>

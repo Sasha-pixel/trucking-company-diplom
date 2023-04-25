@@ -1,0 +1,46 @@
+{
+  "name": "OrderList",
+  "title": "Список заказов",
+  "type": "List",
+  "bc": "orderList",
+  "showCondition": [],
+  "fields": [
+    {
+      "title": "ID",
+      "key": "id",
+      "type": "number",
+      "drillDown": true
+    },
+    {
+      "title": "Название",
+      "key": "name",
+      "type": "input"
+    },
+    {
+      "title": "Тип заказа",
+      "key": "typeCd",
+      "type": "dictionary"
+    },
+    {
+      "title": "Статус заказа",
+      "key": "statusCd",
+      "type": "dictionary"
+    },
+    {
+      "title": "Дата завершения",
+      "key": "completionDate",
+      "type": "date"
+    }
+  ],
+  "axisFields": [],
+  "chart": [],
+  "options": {
+    "readOnly": true,
+    "actionGroups": {
+      "include": [
+        "create",
+        "delete"
+      ]
+    }
+  }
+}

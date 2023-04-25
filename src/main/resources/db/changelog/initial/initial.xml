@@ -5,4 +5,130 @@
   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd"
   logicalFilePath="db/changelog/initial/initial.xml">
 
+  <changeSet id="CREATE DRIVER TABLE" author="INITIAL">
+    <createTable tableName="DRIVER">
+      <column name="ID" type="BIGINT" remarks="Идентификатор">
+        <constraints nullable="false" primaryKey="true"/>
+      </column>
+      <column name="CREATED_DATE" type="TIMESTAMP" remarks="Дата создания" defaultValueComputed="current_timestamp">
+        <constraints nullable="false"/>
+      </column>
+      <column name="CREATED_BY_USER_ID" type="BIGINT" remarks="Пользователь, который создал" defaultValueNumeric="1">
+        <constraints nullable="false" foreignKeyName="FK__DRIVER__CREATED_BY_USER_ID__USERS__ID" references="USERS"/>
+      </column>
+      <column name="UPDATED_DATE" type="TIMESTAMP" remarks="Дата изменения" defaultValueComputed="current_timestamp">
+        <constraints nullable="false"/>
+      </column>
+      <column name="LAST_UPD_BY_USER_ID" type="BIGINT" remarks="Пользователь, который внес последнее изменение" defaultValueNumeric="1">
+        <constraints nullable="false" foreignKeyName="FK__DRIVER__LAST_UPD_BY_USER_ID__USERS__ID" references="USERS"/>
+      </column>
+      <column name="VSTAMP" type="BIGINT" remarks="Версия для оптимистичной блокировки" defaultValueNumeric="0">
+        <constraints nullable="false"/>
+      </column>
+      <column name="FIO" type="TEXT" remarks="ФИО водителя"/>
+      <column name="PHONE" type="TEXT" remarks="Номер телефона"/>
+      <column name="EMAIL" type="TEXT" remarks="Адрес электронной почты"/>
+      <column name="DRIVER_STATUS_CD" type="TEXT" remarks="Статус водителя"/>
+    </createTable>
+  </changeSet>
+
+  <changeSet id="CREATE TRUCK TABLE" author="INITIAL">
+    <createTable tableName="TRUCK">
+      <column name="ID" type="BIGINT" remarks="Идентификатор">
+        <constraints nullable="false" primaryKey="true"/>
+      </column>
+      <column name="CREATED_DATE" type="TIMESTAMP" remarks="Дата создания" defaultValueComputed="current_timestamp">
+        <constraints nullable="false"/>
+      </column>
+      <column name="CREATED_BY_USER_ID" type="BIGINT" remarks="Пользователь, который создал" defaultValueNumeric="1">
+        <constraints nullable="false" foreignKeyName="FK__TRUCK__CREATED_BY_USER_ID__USERS__ID" references="USERS"/>
+      </column>
+      <column name="UPDATED_DATE" type="TIMESTAMP" remarks="Дата изменения" defaultValueComputed="current_timestamp">
+        <constraints nullable="false"/>
+      </column>
+      <column name="LAST_UPD_BY_USER_ID" type="BIGINT" remarks="Пользователь, который внес последнее изменение" defaultValueNumeric="1">
+        <constraints nullable="false" foreignKeyName="FK__TRUCK__LAST_UPD_BY_USER_ID__USERS__ID" references="USERS"/>
+      </column>
+      <column name="VSTAMP" type="BIGINT" remarks="Версия для оптимистичной блокировки" defaultValueNumeric="0">
+        <constraints nullable="false"/>
+      </column>
+      <column name="DRIVER_ID" type="BIGINT" remarks="Идентификатор водителя">
+        <constraints foreignKeyName="FK__TRUCK__DRIVER_ID__DRIVER__ID" references="DRIVER"/>
+      </column>
+      <column name="CAR_NUMBER" type="TEXT" remarks="Автомобильный номер"/>
+      <column name="MODEL" type="TEXT" remarks="Модель автомобиля"/>
+      <column name="TRUCK_TYPE_CD" type="TEXT" remarks="Тип автомобиля"/>
+      <column name="TRUCK_TECHNICAL_CONDITION_CD" type="TEXT" remarks="Техническое состояние автомобиля" defaultValue="NEW"/>
+      <column name="TRUCK_STATUS_CD" type="TEXT" remarks="Статус автомобиля"/>
+      <column name="TRANSPORTED_CARGO_TYPE_CD" type="TEXT" remarks="Тип перевозимых грузов"/>
+      <column name="DIMENSION" type="TEXT" remarks="Габариты автомобиля"/>
+    </createTable>
+  </changeSet>
+
+  <changeSet id="CREATE ORDER TABLE" author="INITIAL">
+    <createTable tableName="ORDER_ISSUE">
+      <column name="ID" type="BIGINT" remarks="Идентификатор">
+        <constraints nullable="false" primaryKey="true"/>
+      </column>
+      <column name="CREATED_DATE" type="TIMESTAMP" remarks="Дата создания" defaultValueComputed="current_timestamp">
+        <constraints nullable="false"/>
+      </column>
+      <column name="CREATED_BY_USER_ID" type="BIGINT" remarks="Пользователь, который создал" defaultValueNumeric="1">
+        <constraints nullable="false" foreignKeyName="FK__ORDER__CREATED_BY_USER_ID__USERS__ID" references="USERS"/>
+      </column>
+      <column name="UPDATED_DATE" type="TIMESTAMP" remarks="Дата изменения" defaultValueComputed="current_timestamp">
+        <constraints nullable="false"/>
+      </column>
+      <column name="LAST_UPD_BY_USER_ID" type="BIGINT" remarks="Пользователь, который внес последнее изменение" defaultValueNumeric="1">
+        <constraints nullable="false" foreignKeyName="FK__ORDER__LAST_UPD_BY_USER_ID__USERS__ID" references="USERS"/>
+      </column>
+      <column name="VSTAMP" type="BIGINT" remarks="Версия для оптимистичной блокировки" defaultValueNumeric="0">
+        <constraints nullable="false"/>
+      </column>
+      <column name="NAME" type="TEXT" remarks="Название заказа"/>
+      <column name="PRICE" type="BIGINT" remarks="Стоимость заказа"/>
+      <column name="ORDER_TYPE_CD" type="TEXT" remarks="Стоимость заказа"/>
+      <column name="ORDER_STATUS_CD" type="TEXT" remarks="Тип заказа" defaultValue="DRAFT">
+        <constraints nullable="false"/>
+      </column>
+      <column name="DRIVER_ID" type="BIGINT" remarks="Идентификатор водителя">
+        <constraints foreignKeyName="FK__ORDER__DRIVER_ID__DRIVER__ID" references="DRIVER"/>
+      </column>
+      <column name="COMPLETION_DATE" type="TIMESTAMP" remarks="Дата выполнения заказа"/>
+      <column name="DEPARTURE_POINT" type="TEXT" remarks="Пункт отправления заказа"/>
+      <column name="DESTINATION_POINT" type="TEXT" remarks="Место назначения"/>
+      <column name="COMMENT" type="TEXT" remarks="Комментарий"/>
+    </createTable>
+  </changeSet>
+
+  <changeSet id="CREATE CARGO TABLE" author="INITIAL">
+    <createTable tableName="CARGO">
+      <column name="ID" type="BIGINT" remarks="Идентификатор">
+        <constraints nullable="false" primaryKey="true"/>
+      </column>
+      <column name="CREATED_DATE" type="TIMESTAMP" remarks="Дата создания" defaultValueComputed="current_timestamp">
+        <constraints nullable="false"/>
+      </column>
+      <column name="CREATED_BY_USER_ID" type="BIGINT" remarks="Пользователь, который создал" defaultValueNumeric="1">
+        <constraints nullable="false" foreignKeyName="FK__CARGO__CREATED_BY_USER_ID__USERS__ID" references="USERS"/>
+      </column>
+      <column name="UPDATED_DATE" type="TIMESTAMP" remarks="Дата изменения" defaultValueComputed="current_timestamp">
+        <constraints nullable="false"/>
+      </column>
+      <column name="LAST_UPD_BY_USER_ID" type="BIGINT" remarks="Пользователь, который внес последнее изменение" defaultValueNumeric="1">
+        <constraints nullable="false" foreignKeyName="FK__CARGO__LAST_UPD_BY_USER_ID__USERS__ID" references="USERS"/>
+      </column>
+      <column name="VSTAMP" type="BIGINT" remarks="Версия для оптимистичной блокировки" defaultValueNumeric="0">
+        <constraints nullable="false"/>
+      </column>
+      <column name="NAME" type="TEXT" remarks="Название груза"/>
+      <column name="CARGO_TYPE_CD" type="TEXT" remarks="Тип груза"/>
+      <column name="DIMENSION" type="TEXT" remarks="Габариты груза"/>
+      <column name="WEIGHT" type="BIGINT" remarks="Вес груза"/>
+      <column name="ORDER_ISSUE_ID" type="BIGINT" remarks="Идентификатор заказа">
+        <constraints foreignKeyName="FK__CARGO__ORDER_ISSUE_ID__ORDER_ISSUE__ID" references="ORDER_ISSUE"/>
+      </column>
+    </createTable>
+  </changeSet>
+
 </databaseChangeLog>

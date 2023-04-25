@@ -1,30 +1,18 @@
 package com.example.truck.business.repository.dictionary;
 
-import static io.tesler.api.data.dictionary.DictionaryCache.dictionary;
+import java.lang.annotation.Retention;
+import java.lang.annotation.Target;
 
-import io.tesler.api.data.dictionary.IDictionaryType;
-import io.tesler.api.data.dictionary.LOV;
-import java.io.Serializable;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import io.tesler.api.data.dictionary.BaseLov;
 
-@Getter
-@RequiredArgsConstructor
-public enum DictionaryType implements Serializable, IDictionaryType {
-	;
+import static java.lang.annotation.ElementType.FIELD;
+import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
-	@Override
-	public String getName() {
-		return name();
-	}
+@Target(FIELD)
+@Retention(RUNTIME)
+@BaseLov(type = AppDictionaryType.class)
+public @interface DictionaryType {
 
-	@Override
-	public LOV lookupName(final String val) {
-		return dictionary().lookupName(val, this);
-	}
+	AppDictionaryType value();
 
-	@Override
-	public String lookupValue(final LOV lov) {
-		return dictionary().lookupValue(lov, this);
-	}
 }

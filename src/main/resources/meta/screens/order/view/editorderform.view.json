@@ -1,0 +1,21 @@
+{
+  "name": "editorderform",
+  "title": "Список заказов",
+  "template": "DashboardView",
+  "url": "/screen/order/view/editorderform",
+  "widgets": [
+    {
+      "widgetName": "SecondLevelMenu",
+      "position": 0,
+      "gridWidth": 24
+    },
+    {
+      "widgetName": "EditOrderForm",
+      "position": 1,
+      "gridWidth": 24
+    }
+  ],
+  "rolesAllowed": [
+    "TESLER_USER"
+  ]
+}
