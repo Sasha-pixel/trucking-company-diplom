@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 
 import com.example.truck.business.dto.OrderIssueDto;
 import com.example.truck.business.dto.OrderIssueDto_;
+import com.example.truck.business.repository.DriverRepository;
 import com.example.truck.business.repository.OrderIssueRepository;
 import com.example.truck.business.repository.dictionary.AppDictionaryType;
 import com.example.truck.business.repository.dictionary.Dictionaries.ORDER_STATUS_CD;
@@ -24,9 +25,12 @@ public class OrderService extends AbstractTeslerService<OrderIssueDto, OrderIssu
 
 	private final OrderIssueRepository orderIssueRepository;
 
-	public OrderService(final OrderIssueRepository orderIssueRepository) {
+	private final DriverRepository driverRepository;
+
+	public OrderService(final OrderIssueRepository orderIssueRepository, final DriverRepository driverRepository) {
 		super(OrderIssueDto.class, OrderIssue.class, null, OrderMetaBuilder.class);
 		this.orderIssueRepository = orderIssueRepository;
+		this.driverRepository = driverRepository;
 	}
 
 	@Override
@@ -62,6 +66,7 @@ public class OrderService extends AbstractTeslerService<OrderIssueDto, OrderIssu
 			setIfChanged(data, OrderIssueDto_.completionDate, entity::setCompletionDate);
 			setIfChanged(data, OrderIssueDto_.departurePoint, entity::setDeparturePoint);
 			setIfChanged(data, OrderIssueDto_.destinationPoint, entity::setDestinationPoint);
+			setMappedIfChanged(data, OrderIssueDto_.driverId, entity::setDriver, findEntity(driverRepository));
 			setIfChanged(data, OrderIssueDto_.comment, entity::setComment);
 		}
 		return new ActionResultDTO<>(entityToDto(bc, entity))

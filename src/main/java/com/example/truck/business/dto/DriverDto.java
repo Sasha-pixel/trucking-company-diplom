@@ -34,6 +34,8 @@ public class DriverDto extends DataResponseDTO {
 
 	private Long truckId;
 
+	private String truckModel;
+
 	public DriverDto(final Driver entity) {
 		this.id = String.valueOf(entity.getId());
 		this.fio = entity.getFio();
@@ -44,6 +46,9 @@ public class DriverDto extends DataResponseDTO {
 				.orElse(null);
 		this.truckId = Optional.ofNullable(entity.getTruck())
 				.map(Truck::getId)
+				.orElse(null);
+		this.truckModel = Optional.ofNullable(entity.getTruck())
+				.map(Truck::getModel)
 				.orElse(null);
 	}
 

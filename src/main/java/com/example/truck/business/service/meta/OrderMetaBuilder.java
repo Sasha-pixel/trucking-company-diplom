@@ -26,6 +26,8 @@ public class OrderMetaBuilder extends AbstractTeslerMeta<OrderIssueDto> {
 				OrderIssueDto_.completionDate,
 				OrderIssueDto_.departurePoint,
 				OrderIssueDto_.destinationPoint,
+				OrderIssueDto_.driverId,
+				OrderIssueDto_.driverFio,
 				OrderIssueDto_.comment
 		);
 		fields.setRequired(

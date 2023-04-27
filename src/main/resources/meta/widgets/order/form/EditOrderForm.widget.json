@@ -36,6 +36,16 @@
       "type": "input"
     },
     {
+      "label": "Шаблон водителя",
+      "key": "driverFio",
+      "type": "pickList",
+      "popupBcName": "driverPickList",
+      "pickMap": {
+        "driverId": "id",
+        "driverFio": "fio"
+      }
+    },
+    {
       "label": "Комментарий",
       "key": "comment",
       "type": "input"
@@ -96,6 +106,14 @@
           "cols": [
             {
               "fieldKey": "destinationPoint",
+              "span": 24
+            }
+          ]
+        },
+        {
+          "cols": [
+            {
+              "fieldKey": "driverFio",
               "span": 24
             }
           ]
