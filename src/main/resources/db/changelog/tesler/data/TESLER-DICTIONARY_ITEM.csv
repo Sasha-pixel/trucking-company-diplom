@@ -1,6 +1,9 @@
 ﻿ID;DICTIONARY_TYPE_ID;TYPE;KEY;VALUE;ACTIVE;DISPLAY_ORDER;DESCRIPTION
 nextval('APP_SEQ');1;"INTERNAL_ROLE";"ADMIN";"Администратор";true;0;null
 nextval('APP_SEQ');1;"INTERNAL_ROLE";"TESLER_USER";"Пользователь";true;1;null
+nextval('APP_SEQ');1;"INTERNAL_ROLE";"OPERATOR";"Оператор";true;2;null
+nextval('APP_SEQ');1;"INTERNAL_ROLE";"BUSINESS_ADMIN";"Бизнес администратор";true;3;null
+nextval('APP_SEQ');1;"INTERNAL_ROLE";"REVIEWER";"Наблюдатель";true;4;null
 nextval('APP_SEQ');2;"ORDER_TYPE_CD";"SINGLE";"Разовый";true;0;null
 nextval('APP_SEQ');2;"ORDER_TYPE_CD";"SERIES";"Регулярный";true;1;null
 nextval('APP_SEQ');3;"ORDER_STATUS_CD";"DRAFT";"Черновик";true;0;null
@@ -8,3 +11,7 @@ nextval('APP_SEQ');3;"ORDER_STATUS_CD";"NEW";"Новый";true;1;null
 nextval('APP_SEQ');3;"ORDER_STATUS_CD";"BOOKED";"Занят";true;2;null
 nextval('APP_SEQ');3;"ORDER_STATUS_CD";"IN_PROCESS";"В процессе";true;3;null
 nextval('APP_SEQ');3;"ORDER_STATUS_CD";"COMPLETED";"Доставлен";true;4;null
+nextval('APP_SEQ');4;"DRIVER_STATUS_CD";"FREE";"Свободен";true;0;null
+nextval('APP_SEQ');4;"DRIVER_STATUS_CD";"BUSY";"Выполняет заказ";true;1;null
+nextval('APP_SEQ');4;"DRIVER_STATUS_CD";"FIRED";"Уволен";true;2;null
+nextval('APP_SEQ');4;"DRIVER_STATUS_CD";"ON_HOLIDAY";"В отпуске";true;3;null

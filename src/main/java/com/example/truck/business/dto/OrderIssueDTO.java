@@ -22,7 +22,7 @@ import io.tesler.api.data.dto.DataResponseDTO;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class OrderIssueDto extends DataResponseDTO {
+public class OrderIssueDTO extends DataResponseDTO {
 
 	private String name;
 
@@ -46,7 +46,7 @@ public class OrderIssueDto extends DataResponseDTO {
 
 	private String comment;
 
-	public OrderIssueDto(final OrderIssue entity) {
+	public OrderIssueDTO(final OrderIssue entity) {
 		this.id = String.valueOf(entity.getId());
 		this.name = entity.getName();
 		this.price = entity.getPrice();

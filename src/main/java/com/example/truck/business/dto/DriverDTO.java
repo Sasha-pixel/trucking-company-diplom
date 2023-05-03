@@ -21,7 +21,7 @@ import io.tesler.api.data.dto.DataResponseDTO;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class DriverDto extends DataResponseDTO {
+public class DriverDTO extends DataResponseDTO {
 
 	private String fio;
 
@@ -36,7 +36,7 @@ public class DriverDto extends DataResponseDTO {
 
 	private String truckModel;
 
-	public DriverDto(final Driver entity) {
+	public DriverDTO(final Driver entity) {
 		this.id = String.valueOf(entity.getId());
 		this.fio = entity.getFio();
 		this.phone = entity.getPhone();

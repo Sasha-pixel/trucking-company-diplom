@@ -2,3 +2,4 @@ ID;TYPE;TYPE_DESC
 1;INTERNAL_ROLE;Роли пользователей
 2;ORDER_TYPE_CD;Тип заказа
 3;ORDER_STATUS_CD;Статус заказа
+4;DRIVER_STATUS_CD;Статус водителя

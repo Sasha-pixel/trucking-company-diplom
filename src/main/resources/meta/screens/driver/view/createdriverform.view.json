@@ -1,8 +1,8 @@
 {
-  "name": "editorderform",
-  "title": "Информация о заказе",
+  "name": "createdriverform",
+  "title": "Добавление водителя",
   "template": "DashboardView",
-  "url": "/screen/order/view/editorderform",
+  "url": "/screen/driver/view/createdriverform",
   "widgets": [
     {
       "widgetName": "SecondLevelMenu",
@@ -10,13 +10,8 @@
       "gridWidth": 24
     },
     {
-      "widgetName": "EditOrderForm",
+      "widgetName": "CreateDriverForm",
       "position": 1,
-      "gridWidth": 24
-    },
-    {
-      "widgetName": "DriverPickListPopUp",
-      "position": 2,
       "gridWidth": 24
     }
   ],

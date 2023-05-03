@@ -46,8 +46,8 @@ public class DrillDownUtils {
 	 * @return ссылка на запись на виджете
 	 */
 	public static String bcUrl(final Screens screenName, final Views viewName, final BcIdentifier parentBc,
-			final Long parentId, final BcIdentifier bc,
-			final Long id) {
+														 final Long parentId, final BcIdentifier bc,
+														 final Long id) {
 		return String.format(BC_URL_PARENT_TEMPLATE, screenName, viewName, parentBc, parentId, bc, id);
 	}
 
@@ -63,8 +63,8 @@ public class DrillDownUtils {
 	 * @return ссылка на виджет
 	 */
 	public static String bcUrl(final Screens screenName, final Views viewName, final BcIdentifier parentBc,
-			final Long parentId,
-			final BcIdentifier bc) {
+														 final Long parentId,
+														 final BcIdentifier bc) {
 		return String.format(BC_URL_PARENT_TO_LIST_TEMPLATE, screenName, viewName, parentBc, parentId, bc);
 	}
 
@@ -118,7 +118,8 @@ public class DrillDownUtils {
 	@RequiredArgsConstructor
 	public enum Screens {
 
-		ORDER_SCREEN("order");
+		ORDER_SCREEN("order"),
+		DRIVER_SCREEN("driver");
 
 		private final String name;
 
@@ -133,7 +134,11 @@ public class DrillDownUtils {
 
 		ORDER_LIST_VIEW("orderlist"),
 		CREATE_ORDER_VIEW("createorderform"),
-		EDIT_ORDER_VIEW("editorderform");
+		EDIT_ORDER_VIEW("editorderform"),
+
+		DRIVER_LIST_VIEW("driverlist"),
+		CREATE_DRIVER_VIEW("createdriverform"),
+		EDIT_DRIVER_VIEW("editdriverform");
 
 		private final String name;
 
@@ -148,7 +153,11 @@ public class DrillDownUtils {
 
 		ORDER_SCREEN_ORDER_LIST_VIEW(Screens.ORDER_SCREEN, Views.ORDER_LIST_VIEW),
 		ORDER_SCREEN_CREATE_ORDER_VIEW(Screens.ORDER_SCREEN, Views.CREATE_ORDER_VIEW),
-		ORDER_SCREEN_EDIT_ORDER_VIEW(Screens.ORDER_SCREEN, Views.EDIT_ORDER_VIEW);
+		ORDER_SCREEN_EDIT_ORDER_VIEW(Screens.ORDER_SCREEN, Views.EDIT_ORDER_VIEW),
+
+		DRIVER_SCREEN_DRIVER_LIST_VIEW(Screens.DRIVER_SCREEN, Views.DRIVER_LIST_VIEW),
+		DRIVER_SCREEN_CREATE_DRIVER_VIEW(Screens.DRIVER_SCREEN, Views.CREATE_DRIVER_VIEW),
+		DRIVER_SCREEN_EDIT_DRIVER_VIEW(Screens.DRIVER_SCREEN, Views.EDIT_DRIVER_VIEW);
 
 		private final Screens screen;
 

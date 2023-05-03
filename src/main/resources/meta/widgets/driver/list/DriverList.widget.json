@@ -1,0 +1,46 @@
+{
+  "name": "DriverList",
+  "title": "Список водителей",
+  "type": "List",
+  "bc": "driverList",
+  "showCondition": [],
+  "fields": [
+    {
+      "title": "ID",
+      "key": "id",
+      "type": "number",
+      "drillDown": true
+    },
+    {
+      "title": "ФИО",
+      "key": "fio",
+      "type": "input"
+    },
+    {
+      "title": "Номер телефона",
+      "key": "phone",
+      "type": "input"
+    },
+    {
+      "title": "Адрес эл.почты",
+      "key": "email",
+      "type": "input"
+    },
+    {
+      "title": "Статус",
+      "key": "statusCd",
+      "type": "dictionary"
+    }
+  ],
+  "axisFields": [],
+  "chart": [],
+  "options": {
+    "readOnly": true,
+    "actionGroups": {
+      "include": [
+        "create",
+        "delete"
+      ]
+    }
+  }
+}

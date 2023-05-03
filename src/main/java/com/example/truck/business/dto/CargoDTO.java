@@ -21,7 +21,7 @@ import io.tesler.api.data.dto.DataResponseDTO;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class CargoDto extends DataResponseDTO {
+public class CargoDTO extends DataResponseDTO {
 
 	private String name;
 
@@ -34,7 +34,7 @@ public class CargoDto extends DataResponseDTO {
 
 	private Long orderId;
 
-	public CargoDto(final Cargo entity) {
+	public CargoDTO(final Cargo entity) {
 		this.id = String.valueOf(entity.getId());
 		this.name = entity.getName();
 		this.typeCd = Optional.ofNullable(entity.getTypeCd())

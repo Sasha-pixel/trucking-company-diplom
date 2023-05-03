@@ -1,15 +1,9 @@
 package com.example.truck.infrastructure.configuration;
 
-import io.tesler.core.config.APIConfig;
-import io.tesler.core.config.CoreApplicationConfig;
-import io.tesler.core.config.UIConfig;
-import io.tesler.core.config.properties.APIProperties;
-import io.tesler.core.config.properties.UIProperties;
-import io.tesler.core.file.service.TeslerFileService;
-import io.tesler.core.file.service.TeslerFileServiceSimple;
-import io.tesler.model.core.config.PersistenceJPAConfig;
 import java.util.concurrent.Executors;
+
 import lombok.RequiredArgsConstructor;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -21,6 +15,15 @@ import org.springframework.scheduling.concurrent.ConcurrentTaskExecutor;
 import org.springframework.web.servlet.config.annotation.AsyncSupportConfigurer;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+import io.tesler.core.config.APIConfig;
+import io.tesler.core.config.CoreApplicationConfig;
+import io.tesler.core.config.UIConfig;
+import io.tesler.core.config.properties.APIProperties;
+import io.tesler.core.config.properties.UIProperties;
+import io.tesler.core.file.service.TeslerFileService;
+import io.tesler.core.file.service.TeslerFileServiceSimple;
+import io.tesler.model.core.config.PersistenceJPAConfig;
 
 @Configuration
 @RequiredArgsConstructor

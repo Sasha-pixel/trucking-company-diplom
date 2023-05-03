@@ -1,0 +1,24 @@
+{
+  "name": "driver",
+  "title": "Водители",
+  "order": 1,
+  "primaryViewName": "driverlist",
+  "primaryViews": [
+    "driverlist"
+  ],
+  "navigation": {
+    "menu": [
+      {
+        "viewName": "driverlist"
+      },
+      {
+        "viewName": "createdriverform",
+        "hidden": true
+      },
+      {
+        "viewName": "editdriverform",
+        "hidden": true
+      }
+    ]
+  }
+}

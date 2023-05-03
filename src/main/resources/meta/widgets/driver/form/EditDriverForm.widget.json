@@ -1,0 +1,74 @@
+{
+  "name": "EditDriverForm",
+  "title": "Общая информация",
+  "type": "Form",
+  "bc": "editDriverForm",
+  "showCondition": [],
+  "fields": [
+    {
+      "label": "ФИО",
+      "key": "fio",
+      "type": "input"
+    },
+    {
+      "label": "Номер телефона",
+      "key": "phone",
+      "type": "input"
+    },
+    {
+      "label": "Адрес эл.почты",
+      "key": "email",
+      "type": "input"
+    },
+    {
+      "label": "Статус",
+      "key": "statusCd",
+      "type": "dictionary"
+    }
+  ],
+  "axisFields": [],
+  "chart": [],
+  "options": {
+    "actionGroups": {
+      "include": [
+        "save"
+      ]
+    },
+    "layout": {
+      "rows": [
+        {
+          "cols": [
+            {
+              "fieldKey": "fio",
+              "span": 24
+            }
+          ]
+        },
+        {
+          "cols": [
+            {
+              "fieldKey": "phone",
+              "span": 24
+            }
+          ]
+        },
+        {
+          "cols": [
+            {
+              "fieldKey": "email",
+              "span": 24
+            }
+          ]
+        },
+        {
+          "cols": [
+            {
+              "fieldKey": "statusCd",
+              "span": 24
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

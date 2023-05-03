@@ -22,7 +22,7 @@
     "realmRoles" : [ "uma_authorization", "offline_access" ],
     "clientRoles" : {
       "account" : [ "view-profile", "manage-account" ],
-      "tesler-keycloak-client" : [ "TESLER_USER" ]
+      "tesler-keycloak-client" : [ "BUSINESS_ADMIN", "OPERATOR", "REVIEWER" ]
     },
     "notBefore" : 0,
     "groups" : [ ]

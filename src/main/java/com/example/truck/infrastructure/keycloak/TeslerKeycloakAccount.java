@@ -1,16 +1,18 @@
 package com.example.truck.infrastructure.keycloak;
 
-
-import io.tesler.api.data.dictionary.LOV;
-import io.tesler.api.service.session.TeslerUserDetailsInterface;
 import java.security.Principal;
 import java.util.Set;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.Accessors;
+
+import org.springframework.security.core.GrantedAuthority;
+
 import org.keycloak.adapters.RefreshableKeycloakSecurityContext;
 import org.keycloak.adapters.springsecurity.account.SimpleKeycloakAccount;
-import org.springframework.security.core.GrantedAuthority;
+import io.tesler.api.data.dictionary.LOV;
+import io.tesler.api.service.session.TeslerUserDetailsInterface;
 
 @Getter
 @Setter

@@ -21,7 +21,7 @@ import io.tesler.api.data.dto.DataResponseDTO;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class TruckDto extends DataResponseDTO {
+public class TruckDTO extends DataResponseDTO {
 
 	private String driverFio;
 
@@ -43,7 +43,7 @@ public class TruckDto extends DataResponseDTO {
 
 	private String dimension;
 
-	public TruckDto(final Truck entity) {
+	public TruckDTO(final Truck entity) {
 		this.id = String.valueOf(entity.getId());
 		this.driverFio = Optional.ofNullable(entity.getDriver())
 				.map(Driver::getFio)

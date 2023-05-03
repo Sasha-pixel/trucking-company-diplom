@@ -1,19 +1,22 @@
 package com.example.truck.infrastructure.keycloak;
 
+import java.util.stream.Collectors;
+
+import lombok.RequiredArgsConstructor;
+
+import org.springframework.context.annotation.Primary;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.stereotype.Component;
+
+import org.keycloak.adapters.springsecurity.account.SimpleKeycloakAccount;
+import org.keycloak.adapters.springsecurity.token.KeycloakAuthenticationToken;
 import io.tesler.api.service.session.TeslerUserDetailsInterface;
 import io.tesler.api.service.tx.TransactionService;
 import io.tesler.core.util.session.CoreSessionServiceImpl;
 import io.tesler.model.core.dao.JpaDao;
 import io.tesler.model.core.entity.User;
 import io.tesler.model.core.entity.User_;
-import java.util.stream.Collectors;
-import lombok.RequiredArgsConstructor;
-import org.keycloak.adapters.springsecurity.account.SimpleKeycloakAccount;
-import org.keycloak.adapters.springsecurity.token.KeycloakAuthenticationToken;
-import org.springframework.context.annotation.Primary;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.stereotype.Component;
 
 @Primary
 @Component

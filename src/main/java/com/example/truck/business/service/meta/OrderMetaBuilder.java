@@ -2,8 +2,8 @@ package com.example.truck.business.service.meta;
 
 import org.springframework.stereotype.Service;
 
-import com.example.truck.business.dto.OrderIssueDto;
-import com.example.truck.business.dto.OrderIssueDto_;
+import com.example.truck.business.dto.OrderIssueDTO;
+import com.example.truck.business.dto.OrderIssueDTO_;
 import com.example.truck.business.repository.dictionary.AppDictionaryType;
 import com.example.truck.business.service.util.DrillDownUtils.ScreenViews;
 import io.tesler.core.crudma.bc.impl.InnerBcDescription;
@@ -15,39 +15,39 @@ import static com.example.truck.business.controller.TeslerRestController.editOrd
 import static com.example.truck.business.service.util.DrillDownUtils.bcUrl;
 
 @Service
-public class OrderMetaBuilder extends AbstractTeslerMeta<OrderIssueDto> {
+public class OrderMetaBuilder extends AbstractTeslerMeta<OrderIssueDTO> {
 
 	@Override
-	public void buildRowDependentMeta(final RowDependentFieldsMeta<OrderIssueDto> fields, final InnerBcDescription bcDescription, final Long rowId,
+	public void buildRowDependentMeta(final RowDependentFieldsMeta<OrderIssueDTO> fields, final InnerBcDescription bcDescription, final Long rowId,
 																		final Long parentId) {
 		fields.setEnabled(
-				OrderIssueDto_.name,
-				OrderIssueDto_.typeCd,
-				OrderIssueDto_.completionDate,
-				OrderIssueDto_.departurePoint,
-				OrderIssueDto_.destinationPoint,
-				OrderIssueDto_.driverId,
-				OrderIssueDto_.driverFio,
-				OrderIssueDto_.comment
+				OrderIssueDTO_.name,
+				OrderIssueDTO_.typeCd,
+				OrderIssueDTO_.completionDate,
+				OrderIssueDTO_.departurePoint,
+				OrderIssueDTO_.destinationPoint,
+				OrderIssueDTO_.driverId,
+				OrderIssueDTO_.driverFio,
+				OrderIssueDTO_.comment
 		);
 		fields.setRequired(
-				OrderIssueDto_.name,
-				OrderIssueDto_.typeCd,
-				OrderIssueDto_.completionDate,
-				OrderIssueDto_.departurePoint,
-				OrderIssueDto_.destinationPoint
+				OrderIssueDTO_.name,
+				OrderIssueDTO_.typeCd,
+				OrderIssueDTO_.completionDate,
+				OrderIssueDTO_.departurePoint,
+				OrderIssueDTO_.destinationPoint
 		);
 		fields.setDrilldown(
-				OrderIssueDto_.id,
+				OrderIssueDTO_.id,
 				DrillDownType.INNER,
 				bcUrl(ScreenViews.ORDER_SCREEN_EDIT_ORDER_VIEW, editOrderForm, rowId)
 		);
 	}
 
 	@Override
-	public void buildIndependentMeta(final FieldsMeta<OrderIssueDto> fields, final InnerBcDescription bcDescription, final Long parentId) {
-		fields.setDictionaryTypeWithAllValues(OrderIssueDto_.typeCd, AppDictionaryType.ORDER_TYPE_CD);
-		fields.setDictionaryTypeWithAllValues(OrderIssueDto_.statusCd, AppDictionaryType.ORDER_STATUS_CD);
+	public void buildIndependentMeta(final FieldsMeta<OrderIssueDTO> fields, final InnerBcDescription bcDescription, final Long parentId) {
+		fields.setDictionaryTypeWithAllValues(OrderIssueDTO_.typeCd, AppDictionaryType.ORDER_TYPE_CD);
+		fields.setDictionaryTypeWithAllValues(OrderIssueDTO_.statusCd, AppDictionaryType.ORDER_STATUS_CD);
 	}
 
 }

@@ -16,6 +16,7 @@
     }
   ],
   "rolesAllowed": [
-    "TESLER_USER"
+    "OPERATOR",
+    "REVIEWER"
   ]
 }

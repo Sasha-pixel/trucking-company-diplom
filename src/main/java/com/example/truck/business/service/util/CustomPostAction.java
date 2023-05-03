@@ -37,7 +37,7 @@ public class CustomPostAction {
 	 * @return Дополнительное действие {@link PostAction.BasePostActionType#DRILL_DOWN} с типом {@link DrillDownType#INNER}
 	 */
 	public static PostAction innerDrillDown(final Screens screenName, final Views viewName, final BcIdentifier bc,
-			final Long id) {
+																					final Long id) {
 		return innerDrillDown(bcUrl(screenName, viewName, bc, id));
 	}
 

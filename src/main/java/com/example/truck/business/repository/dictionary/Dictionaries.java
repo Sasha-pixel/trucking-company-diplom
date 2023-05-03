@@ -41,4 +41,17 @@ public class Dictionaries extends CoreDictionaries {
 
 	}
 
+	@UtilityClass
+	public class DRIVER_STATUS_CD {
+
+		public static final LOV FREE = new LOV("FREE");
+
+		public static final LOV BUSY = new LOV("BUSY");
+
+		public static final LOV FIRED = new LOV("FIRED");
+
+		public static final LOV ON_HOLIDAY = new LOV("ON_HOLIDAY");
+
+	}
+
 }

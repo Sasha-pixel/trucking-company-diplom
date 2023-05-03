@@ -12,6 +12,6 @@
     <appender-ref ref="STDOUT"/>
   </root>
 
-  <logger name="com.example.truck" level="INFO" />
+  <logger name="com.example.truck" level="INFO"/>
 
 </configuration>

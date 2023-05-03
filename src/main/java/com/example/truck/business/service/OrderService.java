@@ -2,8 +2,8 @@ package com.example.truck.business.service;
 
 import org.springframework.stereotype.Service;
 
-import com.example.truck.business.dto.OrderIssueDto;
-import com.example.truck.business.dto.OrderIssueDto_;
+import com.example.truck.business.dto.OrderIssueDTO;
+import com.example.truck.business.dto.OrderIssueDTO_;
 import com.example.truck.business.repository.DriverRepository;
 import com.example.truck.business.repository.OrderIssueRepository;
 import com.example.truck.business.repository.dictionary.AppDictionaryType;
@@ -21,21 +21,21 @@ import static com.example.truck.business.controller.TeslerRestController.createO
 import static com.example.truck.business.controller.TeslerRestController.editOrderForm;
 
 @Service
-public class OrderService extends AbstractTeslerService<OrderIssueDto, OrderIssue> {
+public class OrderService extends AbstractTeslerService<OrderIssueDTO, OrderIssue> {
 
 	private final OrderIssueRepository orderIssueRepository;
 
 	private final DriverRepository driverRepository;
 
 	public OrderService(final OrderIssueRepository orderIssueRepository, final DriverRepository driverRepository) {
-		super(OrderIssueDto.class, OrderIssue.class, null, OrderMetaBuilder.class);
+		super(OrderIssueDTO.class, OrderIssue.class, null, OrderMetaBuilder.class);
 		this.orderIssueRepository = orderIssueRepository;
 		this.driverRepository = driverRepository;
 	}
 
 	@Override
-	public Actions<OrderIssueDto> getActions() {
-		return Actions.<OrderIssueDto>builder()
+	public Actions<OrderIssueDTO> getActions() {
+		return Actions.<OrderIssueDTO>builder()
 				.create().withoutIcon().add()
 				.cancelCreate().withoutIcon().add()
 				.delete().withoutIcon().add()
@@ -44,7 +44,7 @@ public class OrderService extends AbstractTeslerService<OrderIssueDto, OrderIssu
 	}
 
 	@Override
-	protected CreateResult<OrderIssueDto> doCreateEntity(final OrderIssue entity, final BusinessComponent bc) {
+	protected CreateResult<OrderIssueDTO> doCreateEntity(final OrderIssue entity, final BusinessComponent bc) {
 		entity.setStatusCd(ORDER_STATUS_CD.DRAFT);
 		orderIssueRepository.save(entity);
 		return new CreateResult<>(entityToDto(bc, entity))
@@ -58,16 +58,16 @@ public class OrderService extends AbstractTeslerService<OrderIssueDto, OrderIssu
 	}
 
 	@Override
-	protected ActionResultDTO<OrderIssueDto> doUpdateEntity(final OrderIssue entity, final OrderIssueDto data, final BusinessComponent bc) {
+	protected ActionResultDTO<OrderIssueDTO> doUpdateEntity(final OrderIssue entity, final OrderIssueDTO data, final BusinessComponent bc) {
 		if (data.hasChangedFields()) {
-			setIfChanged(data, OrderIssueDto_.name, entity::setName);
-			setMappedIfChanged(data, OrderIssueDto_.typeCd, entity::setTypeCd, AppDictionaryType.ORDER_TYPE_CD::lookupName);
-			setMappedIfChanged(data, OrderIssueDto_.statusCd, entity::setTypeCd, AppDictionaryType.ORDER_STATUS_CD::lookupName);
-			setIfChanged(data, OrderIssueDto_.completionDate, entity::setCompletionDate);
-			setIfChanged(data, OrderIssueDto_.departurePoint, entity::setDeparturePoint);
-			setIfChanged(data, OrderIssueDto_.destinationPoint, entity::setDestinationPoint);
-			setMappedIfChanged(data, OrderIssueDto_.driverId, entity::setDriver, findEntity(driverRepository));
-			setIfChanged(data, OrderIssueDto_.comment, entity::setComment);
+			setIfChanged(data, OrderIssueDTO_.name, entity::setName);
+			setMappedIfChanged(data, OrderIssueDTO_.typeCd, entity::setTypeCd, AppDictionaryType.ORDER_TYPE_CD::lookupName);
+			setMappedIfChanged(data, OrderIssueDTO_.statusCd, entity::setTypeCd, AppDictionaryType.ORDER_STATUS_CD::lookupName);
+			setIfChanged(data, OrderIssueDTO_.completionDate, entity::setCompletionDate);
+			setIfChanged(data, OrderIssueDTO_.departurePoint, entity::setDeparturePoint);
+			setIfChanged(data, OrderIssueDTO_.destinationPoint, entity::setDestinationPoint);
+			setMappedIfChanged(data, OrderIssueDTO_.driverId, entity::setDriver, findEntity(driverRepository));
+			setIfChanged(data, OrderIssueDTO_.comment, entity::setComment);
 		}
 		return new ActionResultDTO<>(entityToDto(bc, entity))
 				.setAction(
@@ -79,8 +79,8 @@ public class OrderService extends AbstractTeslerService<OrderIssueDto, OrderIssu
 	}
 
 	@Override
-	public ActionResultDTO<OrderIssueDto> onCancel(final BusinessComponent bc) {
-		return new ActionResultDTO<OrderIssueDto>()
+	public ActionResultDTO<OrderIssueDTO> onCancel(final BusinessComponent bc) {
+		return new ActionResultDTO<OrderIssueDTO>()
 				.setAction(
 						CustomPostAction.innerDrillDown(
 								ScreenViews.ORDER_SCREEN_ORDER_LIST_VIEW

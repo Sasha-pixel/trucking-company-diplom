@@ -1,7 +1,3 @@
-# Tesler Simple Project
-[Live Demo](http://demo.tesler.io)
-login: `demo`, password: `demo`
-
 ### Prerequisites:
 #####
 * java 8+

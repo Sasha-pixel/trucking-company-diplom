@@ -1,6 +1,6 @@
 {
   "name": "createorderform",
-  "title": "Список заказов",
+  "title": "Создание заказа",
   "template": "DashboardView",
   "url": "/screen/order/view/createorderform",
   "widgets": [
@@ -16,6 +16,7 @@
     }
   ],
   "rolesAllowed": [
-    "TESLER_USER"
+    "OPERATOR",
+    "REVIEWER"
   ]
 }

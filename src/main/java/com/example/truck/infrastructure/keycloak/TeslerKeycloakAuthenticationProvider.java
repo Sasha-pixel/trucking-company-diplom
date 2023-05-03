@@ -1,7 +1,24 @@
 package com.example.truck.infrastructure.keycloak;
 
-import static io.tesler.api.service.session.InternalAuthorizationService.VANILLA;
+import java.util.ArrayList;
+import java.util.Set;
 
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Component;
+
+import com.example.truck.business.repository.DepartmentRepository;
+import com.example.truck.business.repository.UserRepository;
+import org.hibernate.LockOptions;
+import org.keycloak.adapters.springsecurity.account.SimpleKeycloakAccount;
+import org.keycloak.adapters.springsecurity.authentication.KeycloakAuthenticationProvider;
+import org.keycloak.adapters.springsecurity.token.KeycloakAuthenticationToken;
+import org.keycloak.representations.AccessToken;
 import io.tesler.api.data.dictionary.LOV;
 import io.tesler.api.service.session.InternalAuthorizationService;
 import io.tesler.api.service.tx.TransactionService;
@@ -10,22 +27,8 @@ import io.tesler.core.util.SQLExceptions;
 import io.tesler.model.core.dao.JpaDao;
 import io.tesler.model.core.entity.User;
 import io.tesler.model.core.entity.User_;
-import java.util.ArrayList;
-import java.util.Set;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.hibernate.LockOptions;
-import org.keycloak.adapters.springsecurity.account.SimpleKeycloakAccount;
-import org.keycloak.adapters.springsecurity.authentication.KeycloakAuthenticationProvider;
-import org.keycloak.adapters.springsecurity.token.KeycloakAuthenticationToken;
-import org.keycloak.representations.AccessToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.stereotype.Component;
-import com.example.truck.business.repository.DepartmentRepository;
-import com.example.truck.business.repository.UserRepository;
+
+import static io.tesler.api.service.session.InternalAuthorizationService.VANILLA;
 
 @Component
 @Slf4j
