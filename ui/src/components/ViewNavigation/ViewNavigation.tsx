@@ -18,19 +18,27 @@
 import React from 'react'
 import { Tabs } from 'antd'
 import { historyObj, useViewTabs } from '@tesler-ui/core'
+import { getRecordId, getTabKey } from './utils'
+
 import styles from './ViewNavigation.module.css'
 
 export function ViewNavigation() {
     const tabs = useViewTabs(1)
+    const recordId = getRecordId(window.location.href)
     const handleChange = (key: string) => {
         historyObj.push(key)
     }
 
     return (
         <nav className={styles.container}>
-            <Tabs activeKey={tabs?.find(item => item.selected)?.url} tabBarGutter={24} size="large" onChange={handleChange}>
+            <Tabs
+                activeKey={getTabKey(tabs?.find(item => item.selected)?.url, recordId)}
+                tabBarGutter={24}
+                size="large"
+                onChange={handleChange}
+            >
                 {tabs.map(item => (
-                    <Tabs.TabPane key={item.url} tab={<span className={styles.item}>{item.title}</span>} />
+                    <Tabs.TabPane key={getTabKey(item.url, recordId)} tab={<span className={styles.item}>{item.title}</span>} />
                 ))}
             </Tabs>
         </nav>
