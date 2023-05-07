@@ -1,0 +1,25 @@
+{
+  "name": "truck",
+  "title": "Автопарк",
+  "order": 2,
+  "icon": "car",
+  "primaryViewName": "trucklist",
+  "primaryViews": [
+    "trucklist"
+  ],
+  "navigation": {
+    "menu": [
+      {
+        "viewName": "trucklist"
+      },
+      {
+        "viewName": "createtruckform",
+        "hidden": true
+      },
+      {
+        "viewName": "edittruckform",
+        "hidden": true
+      }
+    ]
+  }
+}

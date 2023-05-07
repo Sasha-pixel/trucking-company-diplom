@@ -1,0 +1,51 @@
+{
+  "name": "TruckList",
+  "title": "Список автомобилей",
+  "type": "List",
+  "bc": "truckList",
+  "showCondition": [],
+  "fields": [
+    {
+      "title": "ID",
+      "key": "id",
+      "type": "number",
+      "drillDown": true
+    },
+    {
+      "title": "Модель",
+      "key": "model",
+      "type": "input"
+    },
+    {
+      "title": "Номер",
+      "key": "carNumber",
+      "type": "input"
+    },
+    {
+      "title": "Тип",
+      "key": "typeCd",
+      "type": "dictionary"
+    },
+    {
+      "title": "Статус",
+      "key": "statusCd",
+      "type": "dictionary"
+    },
+    {
+      "title": "Техническое состояние",
+      "key": "technicalConditionCd",
+      "type": "dictionary"
+    }
+  ],
+  "axisFields": [],
+  "chart": [],
+  "options": {
+    "readOnly": true,
+    "actionGroups": {
+      "include": [
+        "create",
+        "delete"
+      ]
+    }
+  }
+}

@@ -1,13 +1,12 @@
 package com.example.truck.business.repository.entity;
 
 import java.time.LocalDateTime;
-import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -63,7 +62,7 @@ public class OrderIssue extends BaseEntity {
 	@Column(name = "COMMENT")
 	private String comment;
 
-	@OneToMany(mappedBy = "orderIssue", cascade = CascadeType.ALL, orphanRemoval = true)
-	private List<Cargo> cargos;
+	@OneToOne(mappedBy = "orderIssue", cascade = CascadeType.ALL, orphanRemoval = true)
+	private Cargo cargo;
 
 }

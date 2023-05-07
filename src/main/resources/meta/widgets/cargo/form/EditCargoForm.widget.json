@@ -1,0 +1,90 @@
+{
+  "name": "EditOrderCargoForm",
+  "title": "Общая информация о грузе",
+  "type": "Form",
+  "bc": "editOrderCargoForm",
+  "showCondition": [],
+  "fields": [
+    {
+      "label": "Название",
+      "key": "name",
+      "type": "input"
+    },
+    {
+      "label": "Тип груза",
+      "key": "typeCd",
+      "type": "dictionary"
+    },
+    {
+      "label": "Габаритная ширина",
+      "key": "dimensionWidth",
+      "type": "number",
+      "digits": 2
+    },
+    {
+      "label": "Габаритная длина",
+      "key": "dimensionLength",
+      "type": "number",
+      "digits": 2
+    },
+    {
+      "label": "Вес",
+      "key": "weight",
+      "type": "number",
+      "digits": 2
+    }
+  ],
+  "axisFields": [],
+  "chart": [],
+  "options": {
+    "actionGroups": {
+      "include": [
+        "save"
+      ]
+    },
+    "layout": {
+      "rows": [
+        {
+          "cols": [
+            {
+              "fieldKey": "name",
+              "span": 24
+            }
+          ]
+        },
+        {
+          "cols": [
+            {
+              "fieldKey": "typeCd",
+              "span": 24
+            }
+          ]
+        },
+        {
+          "cols": [
+            {
+              "fieldKey": "dimensionWidth",
+              "span": 24
+            }
+          ]
+        },
+        {
+          "cols": [
+            {
+              "fieldKey": "dimensionLength",
+              "span": 24
+            }
+          ]
+        },
+        {
+          "cols": [
+            {
+              "fieldKey": "weight",
+              "span": 24
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

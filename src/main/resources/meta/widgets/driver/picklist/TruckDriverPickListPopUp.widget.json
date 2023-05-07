@@ -1,0 +1,31 @@
+{
+  "name": "TruckDriverPickListPopUp",
+  "title": "Список водителей",
+  "type": "PickListPopup",
+  "bc": "truckDriverPickList",
+  "showCondition": [],
+  "fields": [
+    {
+      "title": "ID",
+      "key": "id",
+      "type": "number"
+    },
+    {
+      "title": "ФИО",
+      "key": "fio",
+      "type": "input"
+    },
+    {
+      "title": "Статус",
+      "key": "statusCd",
+      "type": "dictionary"
+    },
+    {
+      "title": "Модель автомобиля",
+      "key": "truckModel",
+      "type": "input"
+    }
+  ],
+  "axisFields": [],
+  "chart": []
+}

@@ -54,4 +54,60 @@ public class Dictionaries extends CoreDictionaries {
 
 	}
 
+	@UtilityClass
+	public class TRUCK_STATUS_CD {
+
+		public static final LOV FREE = new LOV("FREE");
+
+		public static final LOV BUSY = new LOV("BUSY");
+
+		public static final LOV FIRED = new LOV("FIRED");
+
+		public static final LOV ON_SERVICE = new LOV("ON_SERVICE");
+
+	}
+
+	@UtilityClass
+	public class TRUCK_TYPE_CD {
+
+		public static final LOV VAN = new LOV("VAN");
+
+		public static final LOV TRUCK = new LOV("TRUCK");
+
+		public static final LOV LITTLE_TRUCK = new LOV("LITTLE_TRUCK");
+
+	}
+
+	@UtilityClass
+	public class TRUCK_TECHNICAL_CONDITION_CD {
+
+		public static final LOV SERVICEABLE = new LOV("SERVICEABLE");
+
+		public static final LOV FAULTY = new LOV("FAULTY");
+
+	}
+
+	@UtilityClass
+	public class CARGO_TYPE_CD {
+
+		public static final LOV BULK = new LOV("BULK");
+
+		public static final LOV LIQUID = new LOV("LIQUID");
+
+		public static final LOV GAS = new LOV("GAS");
+
+		public static final LOV OVERSIZE = new LOV("OVERSIZE");
+
+		public static final LOV PRODUCTS = new LOV("PRODUCTS");
+
+		public static final LOV SOLID = new LOV("SOLID");
+
+		public static final LOV CARS = new LOV("CARS");
+
+		public static final LOV FLAMMABLE_LIQUID = new LOV("FLAMMABLE_LIQUID");
+
+		public static final LOV FLAMMABLE_GAS = new LOV("FLAMMABLE_GAS");
+
+	}
+
 }

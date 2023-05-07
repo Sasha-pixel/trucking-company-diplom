@@ -4,10 +4,12 @@ import org.springframework.stereotype.Service;
 
 import com.example.truck.business.dto.OrderIssueDTO;
 import com.example.truck.business.dto.OrderIssueDTO_;
+import com.example.truck.business.repository.CargoRepository;
 import com.example.truck.business.repository.DriverRepository;
 import com.example.truck.business.repository.OrderIssueRepository;
 import com.example.truck.business.repository.dictionary.AppDictionaryType;
 import com.example.truck.business.repository.dictionary.Dictionaries.ORDER_STATUS_CD;
+import com.example.truck.business.repository.entity.Cargo;
 import com.example.truck.business.repository.entity.OrderIssue;
 import com.example.truck.business.service.meta.OrderMetaBuilder;
 import com.example.truck.business.service.util.CustomPostAction;
@@ -27,10 +29,17 @@ public class OrderService extends AbstractTeslerService<OrderIssueDTO, OrderIssu
 
 	private final DriverRepository driverRepository;
 
-	public OrderService(final OrderIssueRepository orderIssueRepository, final DriverRepository driverRepository) {
+	private final CargoRepository cargoRepository;
+
+	public OrderService(
+			final OrderIssueRepository orderIssueRepository,
+			final DriverRepository driverRepository,
+			final CargoRepository cargoRepository
+	) {
 		super(OrderIssueDTO.class, OrderIssue.class, null, OrderMetaBuilder.class);
 		this.orderIssueRepository = orderIssueRepository;
 		this.driverRepository = driverRepository;
+		this.cargoRepository = cargoRepository;
 	}
 
 	@Override
@@ -46,6 +55,10 @@ public class OrderService extends AbstractTeslerService<OrderIssueDTO, OrderIssu
 	@Override
 	protected CreateResult<OrderIssueDTO> doCreateEntity(final OrderIssue entity, final BusinessComponent bc) {
 		entity.setStatusCd(ORDER_STATUS_CD.DRAFT);
+		final Cargo cargo = new Cargo();
+		cargo.setOrderIssue(entity);
+		cargoRepository.save(cargo);
+		entity.setCargo(cargo);
 		orderIssueRepository.save(entity);
 		return new CreateResult<>(entityToDto(bc, entity))
 				.setAction(

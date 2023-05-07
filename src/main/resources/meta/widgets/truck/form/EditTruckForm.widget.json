@@ -1,0 +1,158 @@
+{
+  "name": "EditTruckForm",
+  "title": "Общая информация",
+  "type": "Form",
+  "bc": "editTruckForm",
+  "showCondition": [],
+  "fields": [
+    {
+      "label": "Модель",
+      "key": "model",
+      "type": "input"
+    },
+    {
+      "label": "Номер",
+      "key": "carNumber",
+      "type": "input"
+    },
+    {
+      "label": "Водитель",
+      "key": "driverFio",
+      "type": "pickList",
+      "popupBcName": "truckDriverPickList",
+      "pickMap": {
+        "driverId": "id",
+        "driverFio": "fio"
+      }
+    },
+    {
+      "label": "Статус",
+      "key": "statusCd",
+      "type": "dictionary"
+    },
+    {
+      "label": "Техническое состояние",
+      "key": "technicalConditionCd",
+      "type": "dictionary"
+    },
+    {
+      "label": "Тип",
+      "key": "typeCd",
+      "type": "dictionary"
+    },
+    {
+      "label": "Тип перевозимых грузов",
+      "key": "cargoTypeCd",
+      "type": "dictionary"
+    },
+    {
+      "label": "Габаритная ширина кузова",
+      "key": "dimensionWidth",
+      "type": "input"
+    },
+    {
+      "label": "Габаритная длина кузова",
+      "key": "dimensionLength",
+      "type": "input"
+    },
+    {
+      "label": "Грузоподъёмность",
+      "key": "loadCapacity",
+      "type": "number",
+      "digits": 2
+    }
+  ],
+  "axisFields": [],
+  "chart": [],
+  "options": {
+    "actionGroups": {
+      "include": [
+        "save"
+      ]
+    },
+    "layout": {
+      "rows": [
+        {
+          "cols": [
+            {
+              "fieldKey": "model",
+              "span": 24
+            }
+          ]
+        },
+        {
+          "cols": [
+            {
+              "fieldKey": "carNumber",
+              "span": 24
+            }
+          ]
+        },
+        {
+          "cols": [
+            {
+              "fieldKey": "driverFio",
+              "span": 24
+            }
+          ]
+        },
+        {
+          "cols": [
+            {
+              "fieldKey": "statusCd",
+              "span": 24
+            }
+          ]
+        },
+        {
+          "cols": [
+            {
+              "fieldKey": "technicalConditionCd",
+              "span": 24
+            }
+          ]
+        },
+        {
+          "cols": [
+            {
+              "fieldKey": "typeCd",
+              "span": 24
+            }
+          ]
+        },
+        {
+          "cols": [
+            {
+              "fieldKey": "cargoTypeCd",
+              "span": 24
+            }
+          ]
+        },
+        {
+          "cols": [
+            {
+              "fieldKey": "dimensionWidth",
+              "span": 24
+            }
+          ]
+        },
+        {
+          "cols": [
+            {
+              "fieldKey": "dimensionLength",
+              "span": 24
+            }
+          ]
+        },
+        {
+          "cols": [
+            {
+              "fieldKey": "loadCapacity",
+              "span": 24
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

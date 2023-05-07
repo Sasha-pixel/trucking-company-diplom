@@ -1,8 +1,8 @@
 {
-  "name": "DriverPickListPopUp",
+  "name": "OrderDriverPickListPopUp",
   "title": "Список водителей",
   "type": "PickListPopup",
-  "bc": "driverPickList",
+  "bc": "orderDriverPickList",
   "showCondition": [],
   "fields": [
     {

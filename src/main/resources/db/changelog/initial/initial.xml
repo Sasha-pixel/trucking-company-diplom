@@ -60,8 +60,10 @@
       <column name="TRUCK_TYPE_CD" type="TEXT" remarks="Тип автомобиля"/>
       <column name="TRUCK_TECHNICAL_CONDITION_CD" type="TEXT" remarks="Техническое состояние автомобиля" defaultValue="NEW"/>
       <column name="TRUCK_STATUS_CD" type="TEXT" remarks="Статус автомобиля"/>
-      <column name="TRANSPORTED_CARGO_TYPE_CD" type="TEXT" remarks="Тип перевозимых грузов"/>
-      <column name="DIMENSION" type="TEXT" remarks="Габариты автомобиля"/>
+      <column name="CARGO_TYPE_CD" type="TEXT" remarks="Тип перевозимых грузов"/>
+      <column name="DIMENSION_WIDTH" type="DECIMAL" remarks="Габаритная ширина автомобиля"/>
+      <column name="DIMENSION_LENGTH" type="DECIMAL" remarks="Габаритная длина автомобиля"/>
+      <column name="LOAD_CAPACITY" type="BIGINT" remarks="Грузоподъемность автомобиля"/>
     </createTable>
   </changeSet>
 
@@ -123,7 +125,8 @@
       </column>
       <column name="NAME" type="TEXT" remarks="Название груза"/>
       <column name="CARGO_TYPE_CD" type="TEXT" remarks="Тип груза"/>
-      <column name="DIMENSION" type="TEXT" remarks="Габариты груза"/>
+      <column name="DIMENSION_WIDTH" type="DECIMAL" remarks="Габаритная ширина груза"/>
+      <column name="DIMENSION_LENGTH" type="DECIMAL" remarks="Габаритная длина груза"/>
       <column name="WEIGHT" type="BIGINT" remarks="Вес груза"/>
       <column name="ORDER_ISSUE_ID" type="BIGINT" remarks="Идентификатор заказа">
         <constraints foreignKeyName="FK__CARGO__ORDER_ISSUE_ID__ORDER_ISSUE__ID" references="ORDER_ISSUE"/>

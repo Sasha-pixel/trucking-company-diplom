@@ -3,3 +3,7 @@ ID;TYPE;TYPE_DESC
 2;ORDER_TYPE_CD;Тип заказа
 3;ORDER_STATUS_CD;Статус заказа
 4;DRIVER_STATUS_CD;Статус водителя
+5;TRUCK_STATUS_CD;Статус автомобиля
+6;TRUCK_TYPE_CD;Тип автомобиля
+7;TRUCK_TECHNICAL_CONDITION_CD;Техническое состояние автомобиля
+8;CARGO_TYPE_CD;Тип груза

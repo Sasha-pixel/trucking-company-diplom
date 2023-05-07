@@ -17,7 +17,6 @@ public enum AppDictionaryType implements Serializable, IDictionaryType {
 	TRUCK_TYPE_CD,
 	TRUCK_TECHNICAL_CONDITION_CD,
 	TRUCK_STATUS_CD,
-	TRANSPORTED_CARGO_TYPE_CD,
 	ORDER_TYPE_CD,
 	ORDER_STATUS_CD,
 	CARGO_TYPE_CD;

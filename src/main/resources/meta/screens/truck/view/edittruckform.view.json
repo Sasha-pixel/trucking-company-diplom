@@ -1,0 +1,22 @@
+{
+  "name": "edittruckform",
+  "title": "Информация об автомобиле",
+  "template": "DashboardView",
+  "url": "/screen/truck/view/edittruckform",
+  "widgets": [
+    {
+      "widgetName": "EditTruckForm",
+      "position": 1,
+      "gridWidth": 24
+    },
+    {
+      "widgetName": "TruckDriverPickListPopUp",
+      "position": 2,
+      "gridWidth": 24
+    }
+  ],
+  "rolesAllowed": [
+    "OPERATOR",
+    "REVIEWER"
+  ]
+}

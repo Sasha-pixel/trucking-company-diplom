@@ -15,3 +15,19 @@ nextval('APP_SEQ');4;"DRIVER_STATUS_CD";"FREE";"Свободен";true;0;null
 nextval('APP_SEQ');4;"DRIVER_STATUS_CD";"BUSY";"Выполняет заказ";true;1;null
 nextval('APP_SEQ');4;"DRIVER_STATUS_CD";"FIRED";"Уволен";true;2;null
 nextval('APP_SEQ');4;"DRIVER_STATUS_CD";"ON_HOLIDAY";"В отпуске";true;3;null
+nextval('APP_SEQ');5;"TRUCK_STATUS_CD";"FREE";"Свободен";true;0;null
+nextval('APP_SEQ');5;"TRUCK_STATUS_CD";"BUSY";"Занят";true;1;null
+nextval('APP_SEQ');5;"TRUCK_STATUS_CD";"FIRED";"Списан";true;2;null
+nextval('APP_SEQ');5;"TRUCK_STATUS_CD";"ON_SERVICE";"В сервисе";true;3;null
+nextval('APP_SEQ');6;"TRUCK_TYPE_CD";"VAN";"Фургон";true;0;null
+nextval('APP_SEQ');6;"TRUCK_TYPE_CD";"TRUCK";"Фура";true;1;null
+nextval('APP_SEQ');6;"TRUCK_TYPE_CD";"LITTLE_TRUCK";"Грузовик";true;2;null
+nextval('APP_SEQ');7;"TRUCK_TECHNICAL_CONDITION_CD";"SERVICEABLE";"Исправный";true;0;null
+nextval('APP_SEQ');7;"TRUCK_TECHNICAL_CONDITION_CD";"FAULTY";"Неисправный";true;1;null
+nextval('APP_SEQ');8;"CARGO_TYPE_CD";"BULK";"Сыпучий";true;0;null
+nextval('APP_SEQ');8;"CARGO_TYPE_CD";"LIQUID";"Жидкий";true;1;null
+nextval('APP_SEQ');8;"CARGO_TYPE_CD";"GAS";"Газ";true;2;null
+nextval('APP_SEQ');8;"CARGO_TYPE_CD";"OVERSIZE";"Крупногабаритный";true;3;null
+nextval('APP_SEQ');8;"CARGO_TYPE_CD";"PRODUCTS";"Продукты питания";true;4;null
+nextval('APP_SEQ');8;"CARGO_TYPE_CD";"FLAMMABLE_LIQUID";"Горючая жидкость";true;5;null
+nextval('APP_SEQ');8;"CARGO_TYPE_CD";"FLAMMABLE_GAS";"Воспламеняющийся газ";true;6;null

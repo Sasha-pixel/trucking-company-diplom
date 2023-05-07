@@ -1,0 +1,117 @@
+{
+  "name": "CreateTruckForm",
+  "title": "Общая информация",
+  "type": "Form",
+  "bc": "createTruckForm",
+  "showCondition": [],
+  "fields": [
+    {
+      "label": "Модель",
+      "key": "model",
+      "type": "input"
+    },
+    {
+      "label": "Номер",
+      "key": "carNumber",
+      "type": "input"
+    },
+    {
+      "label": "Тип",
+      "key": "typeCd",
+      "type": "dictionary"
+    },
+    {
+      "label": "Тип перевозимых грузов",
+      "key": "cargoTypeCd",
+      "type": "dictionary"
+    },
+    {
+      "label": "Габаритная ширина кузова",
+      "key": "dimensionWidth",
+      "type": "number",
+      "digits": 2
+    },
+    {
+      "label": "Габаритная длина кузова",
+      "key": "dimensionLength",
+      "type": "number",
+      "digits": 2
+    },
+    {
+      "label": "Грузоподъёмность",
+      "key": "loadCapacity",
+      "type": "number",
+      "digits": 2
+    }
+  ],
+  "axisFields": [],
+  "chart": [],
+  "options": {
+    "actionGroups": {
+      "include": [
+        "cancel-create",
+        "save"
+      ]
+    },
+    "layout": {
+      "rows": [
+        {
+          "cols": [
+            {
+              "fieldKey": "model",
+              "span": 24
+            }
+          ]
+        },
+        {
+          "cols": [
+            {
+              "fieldKey": "carNumber",
+              "span": 24
+            }
+          ]
+        },
+        {
+          "cols": [
+            {
+              "fieldKey": "typeCd",
+              "span": 24
+            }
+          ]
+        },
+        {
+          "cols": [
+            {
+              "fieldKey": "cargoTypeCd",
+              "span": 24
+            }
+          ]
+        },
+        {
+          "cols": [
+            {
+              "fieldKey": "dimensionWidth",
+              "span": 24
+            }
+          ]
+        },
+        {
+          "cols": [
+            {
+              "fieldKey": "dimensionLength",
+              "span": 24
+            }
+          ]
+        },
+        {
+          "cols": [
+            {
+              "fieldKey": "loadCapacity",
+              "span": 24
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

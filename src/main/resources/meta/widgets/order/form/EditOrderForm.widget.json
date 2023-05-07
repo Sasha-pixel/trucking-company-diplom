@@ -36,10 +36,10 @@
       "type": "input"
     },
     {
-      "label": "Шаблон водителя",
+      "label": "Исполнитель",
       "key": "driverFio",
       "type": "pickList",
-      "popupBcName": "driverPickList",
+      "popupBcName": "orderDriverPickList",
       "pickMap": {
         "driverId": "id",
         "driverFio": "fio"

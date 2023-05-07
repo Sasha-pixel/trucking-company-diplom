@@ -5,11 +5,6 @@
   "url": "/screen/driver/view/driverlist",
   "widgets": [
     {
-      "widgetName": "SecondLevelMenu",
-      "position": 0,
-      "gridWidth": 24
-    },
-    {
       "widgetName": "DriverList",
       "position": 1,
       "gridWidth": 24

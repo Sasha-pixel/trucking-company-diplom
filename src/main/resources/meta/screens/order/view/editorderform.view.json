@@ -15,7 +15,7 @@
       "gridWidth": 24
     },
     {
-      "widgetName": "DriverPickListPopUp",
+      "widgetName": "OrderDriverPickListPopUp",
       "position": 2,
       "gridWidth": 24
     }

@@ -28,7 +28,9 @@ public class CargoDTO extends DataResponseDTO {
 	@DictionaryType(AppDictionaryType.CARGO_TYPE_CD)
 	private String typeCd;
 
-	private String dimension;
+	private Double dimensionWidth;
+
+	private Double dimensionLength;
 
 	private Long weight;
 
@@ -40,7 +42,8 @@ public class CargoDTO extends DataResponseDTO {
 		this.typeCd = Optional.ofNullable(entity.getTypeCd())
 				.map(AppDictionaryType.CARGO_TYPE_CD::lookupValue)
 				.orElse(null);
-		this.dimension = entity.getDimension();
+		this.dimensionWidth = entity.getDimensionWidth();
+		this.dimensionLength = entity.getDimensionLength();
 		this.weight = entity.getWeight();
 		this.orderId = Optional.ofNullable(entity.getOrderIssue())
 				.map(OrderIssue::getId)

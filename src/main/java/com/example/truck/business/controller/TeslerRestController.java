@@ -4,8 +4,10 @@ import lombok.Getter;
 
 import org.springframework.stereotype.Component;
 
+import com.example.truck.business.service.CargoService;
 import com.example.truck.business.service.DriverService;
 import com.example.truck.business.service.OrderService;
+import com.example.truck.business.service.TruckService;
 import io.tesler.core.crudma.bc.BcIdentifier;
 import io.tesler.core.crudma.bc.EnumBcIdentifier;
 import io.tesler.core.crudma.bc.impl.AbstractEnumBcSupplier;
@@ -26,11 +28,17 @@ public enum TeslerRestController implements EnumBcIdentifier {
 	orderList(OrderService.class),
 		createOrderForm(OrderService.class),
 		editOrderForm(orderList, OrderService.class),
-			driverPickList(editOrderForm, DriverService.class),
+			orderDriverPickList(editOrderForm, DriverService.class),
+			editOrderCargoForm(editOrderForm, CargoService.class),
 
 	driverList(DriverService.class),
 		createDriverForm(DriverService.class),
-		editDriverForm(driverList, DriverService.class);
+		editDriverForm(driverList, DriverService.class),
+
+	truckList(TruckService.class),
+		createTruckForm(TruckService.class),
+		editTruckForm(truckList, TruckService.class),
+			truckDriverPickList(editTruckForm, DriverService.class);
 
 	// @formatter:on
 

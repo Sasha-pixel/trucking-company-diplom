@@ -1,11 +1,11 @@
 {
-  "name": "orderlist",
-  "title": "Список заказов",
+  "name": "trucklist",
+  "title": "Список автомобилей",
   "template": "DashboardView",
-  "url": "/screen/order/view/orderlist",
+  "url": "/screen/truck/view/trucklist",
   "widgets": [
     {
-      "widgetName": "OrderList",
+      "widgetName": "TruckList",
       "position": 1,
       "gridWidth": 24
     }

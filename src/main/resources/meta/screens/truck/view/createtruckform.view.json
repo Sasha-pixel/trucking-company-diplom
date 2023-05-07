@@ -1,0 +1,17 @@
+{
+  "name": "createtruckform",
+  "title": "Добавление автомобиля",
+  "template": "DashboardView",
+  "url": "/screen/truck/view/createtruckform",
+  "widgets": [
+    {
+      "widgetName": "CreateTruckForm",
+      "position": 1,
+      "gridWidth": 24
+    }
+  ],
+  "rolesAllowed": [
+    "OPERATOR",
+    "REVIEWER"
+  ]
+}

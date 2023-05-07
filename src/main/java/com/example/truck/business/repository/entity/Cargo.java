@@ -3,7 +3,7 @@ package com.example.truck.business.repository.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -35,13 +35,16 @@ public class Cargo extends BaseEntity {
 	@DictionaryType(AppDictionaryType.CARGO_TYPE_CD)
 	private LOV typeCd;
 
-	@Column(name = "DIMENSION")
-	private String dimension;
+	@Column(name = "DIMENSION_WIDTH")
+	private Double dimensionWidth;
+
+	@Column(name = "DIMENSION_LENGTH")
+	private Double dimensionLength;
 
 	@Column(name = "WEIGHT")
 	private Long weight;
 
-	@ManyToOne
+	@OneToOne
 	@JoinColumn(name = "ORDER_ISSUE_ID")
 	@JsonSerialize(using = IdBaseEntitySerializer.class)
 	private OrderIssue orderIssue;

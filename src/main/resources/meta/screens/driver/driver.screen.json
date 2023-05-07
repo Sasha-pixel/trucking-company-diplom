@@ -2,6 +2,7 @@
   "name": "driver",
   "title": "Водители",
   "order": 1,
+  "icon": "user",
   "primaryViewName": "driverlist",
   "primaryViews": [
     "driverlist"

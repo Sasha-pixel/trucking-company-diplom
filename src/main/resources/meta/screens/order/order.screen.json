@@ -1,7 +1,8 @@
 {
   "name": "order",
   "title": "Заказы",
-  "order": 1,
+  "order": 0,
+  "icon": "exception",
   "primaryViewName": "orderlist",
   "primaryViews": [
     "orderlist"
@@ -9,15 +10,26 @@
   "navigation": {
     "menu": [
       {
-        "viewName": "orderlist"
+        "viewName": "orderlist",
+        "hidden": true
       },
       {
         "viewName": "createorderform",
         "hidden": true
       },
       {
-        "viewName": "editorderform",
-        "hidden": true
+        "child": [
+          {
+            "viewName": "editorderform"
+          }
+        ]
+      },
+      {
+        "child": [
+          {
+            "viewName": "editordercargoform"
+          }
+        ]
       }
     ]
   }

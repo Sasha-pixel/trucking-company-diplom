@@ -23,6 +23,8 @@ import io.tesler.api.data.dto.DataResponseDTO;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class TruckDTO extends DataResponseDTO {
 
+	private Long driverId;
+
 	private String driverFio;
 
 	private String carNumber;
@@ -38,30 +40,40 @@ public class TruckDTO extends DataResponseDTO {
 	@DictionaryType(AppDictionaryType.TRUCK_STATUS_CD)
 	private String statusCd;
 
-	@DictionaryType(AppDictionaryType.TRANSPORTED_CARGO_TYPE_CD)
-	private String transportedCargoTypeCd;
+	@DictionaryType(AppDictionaryType.CARGO_TYPE_CD)
+	private String cargoTypeCd;
 
-	private String dimension;
+	private Double dimensionWidth;
+
+	private Double dimensionLength;
+
+	private Long loadCapacity;
 
 	public TruckDTO(final Truck entity) {
 		this.id = String.valueOf(entity.getId());
+		this.driverId = Optional.ofNullable(entity.getDriver())
+				.map(Driver::getId)
+				.orElse(null);
 		this.driverFio = Optional.ofNullable(entity.getDriver())
 				.map(Driver::getFio)
 				.orElse(null);
+		this.model = entity.getModel();
 		this.carNumber = entity.getCarNumber();
 		this.typeCd = Optional.ofNullable(entity.getTypeCd())
 				.map(AppDictionaryType.TRUCK_TYPE_CD::lookupValue)
 				.orElse(null);
-		this.technicalConditionCd = Optional.ofNullable(entity.getTypeCd())
+		this.technicalConditionCd = Optional.ofNullable(entity.getTechnicalConditionCd())
 				.map(AppDictionaryType.TRUCK_TECHNICAL_CONDITION_CD::lookupValue)
 				.orElse(null);
 		this.statusCd = Optional.ofNullable(entity.getStatusCd())
 				.map(AppDictionaryType.TRUCK_STATUS_CD::lookupValue)
 				.orElse(null);
-		this.transportedCargoTypeCd = Optional.ofNullable(entity.getStatusCd())
-				.map(AppDictionaryType.TRANSPORTED_CARGO_TYPE_CD::lookupValue)
+		this.cargoTypeCd = Optional.ofNullable(entity.getCargoTypeCd())
+				.map(AppDictionaryType.CARGO_TYPE_CD::lookupValue)
 				.orElse(null);
-		this.dimension = entity.getDimension();
+		this.dimensionWidth = entity.getDimensionWidth();
+		this.dimensionLength = entity.getDimensionLength();
+		this.loadCapacity = entity.getLoadCapacity();
 	}
 
 }

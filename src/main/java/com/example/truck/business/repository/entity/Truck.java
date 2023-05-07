@@ -51,11 +51,17 @@ public class Truck extends BaseEntity {
 	@DictionaryType(AppDictionaryType.TRUCK_STATUS_CD)
 	private LOV statusCd;
 
-	@Column(name = "TRANSPORTED_CARGO_TYPE_CD")
-	@DictionaryType(AppDictionaryType.TRANSPORTED_CARGO_TYPE_CD)
-	private LOV transportedCargoTypeCd;
+	@Column(name = "CARGO_TYPE_CD")
+	@DictionaryType(AppDictionaryType.CARGO_TYPE_CD)
+	private LOV cargoTypeCd;
 
-	@Column(name = "DIMENSION")
-	private String dimension;
+	@Column(name = "DIMENSION_WIDTH")
+	private Double dimensionWidth;
+
+	@Column(name = "DIMENSION_LENGTH")
+	private Double dimensionLength;
+
+	@Column(name = "LOAD_CAPACITY")
+	private Long loadCapacity;
 
 }
