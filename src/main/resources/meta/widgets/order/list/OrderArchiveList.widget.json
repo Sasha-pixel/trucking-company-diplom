@@ -1,8 +1,8 @@
 {
-  "name": "OrderList",
+  "name": "OrderArchiveList",
   "title": "Список заказов",
   "type": "List",
-  "bc": "orderList",
+  "bc": "orderArchiveList",
   "showCondition": [],
   "fields": [
     {
@@ -37,10 +37,7 @@
   "options": {
     "readOnly": true,
     "actionGroups": {
-      "include": [
-        "create",
-        "cancel-order"
-      ]
+      "include": []
     }
   }
 }

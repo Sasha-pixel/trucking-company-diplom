@@ -10,24 +10,29 @@
   "navigation": {
     "menu": [
       {
-        "viewName": "orderlist",
-        "hidden": true
-      },
-      {
-        "viewName": "createorderform",
-        "hidden": true
-      },
-      {
+        "title": "Список шаблонов",
         "child": [
+          {
+            "viewName": "orderlist",
+            "hidden": true
+          },
+          {
+            "viewName": "createorderform",
+            "hidden": true
+          },
           {
             "viewName": "editorderform"
           }
         ]
       },
       {
+        "title": "Архив",
         "child": [
           {
-            "viewName": "editordercargoform"
+            "viewName": "orderarchivelist"
+          },
+          {
+            "viewName": "orderarchiveinfo"
           }
         ]
       }

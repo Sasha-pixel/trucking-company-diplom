@@ -1,8 +1,8 @@
 {
-  "name": "createorderform",
-  "title": "Создание заказа",
+  "name": "orderarchivelist",
+  "title": "Список заказов",
   "template": "DashboardView",
-  "url": "/screen/order/view/createorderform",
+  "url": "/screen/order/view/orderarchivelist",
   "widgets": [
     {
       "widgetName": "SecondLevelMenu",
@@ -10,7 +10,7 @@
       "gridWidth": 24
     },
     {
-      "widgetName": "CreateOrderForm",
+      "widgetName": "OrderArchiveList",
       "position": 1,
       "gridWidth": 24
     }

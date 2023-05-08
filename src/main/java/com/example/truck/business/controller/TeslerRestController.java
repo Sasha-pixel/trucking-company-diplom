@@ -30,6 +30,9 @@ public enum TeslerRestController implements EnumBcIdentifier {
 		editOrderForm(orderList, OrderService.class),
 			orderDriverPickList(editOrderForm, DriverService.class),
 			editOrderCargoForm(editOrderForm, CargoService.class),
+	orderArchiveList(OrderService.class),
+		orderArchiveInfo(orderArchiveList, OrderService.class),
+			cargoArchiveInfo(orderArchiveInfo, CargoService.class),
 
 	driverList(DriverService.class),
 		createDriverForm(DriverService.class),

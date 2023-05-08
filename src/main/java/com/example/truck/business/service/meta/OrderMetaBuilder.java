@@ -12,6 +12,9 @@ import io.tesler.core.dto.rowmeta.FieldsMeta;
 import io.tesler.core.dto.rowmeta.RowDependentFieldsMeta;
 
 import static com.example.truck.business.controller.TeslerRestController.editOrderForm;
+import static com.example.truck.business.controller.TeslerRestController.orderArchiveInfo;
+import static com.example.truck.business.controller.TeslerRestController.orderArchiveList;
+import static com.example.truck.business.controller.TeslerRestController.orderList;
 import static com.example.truck.business.service.util.DrillDownUtils.bcUrl;
 
 @Service
@@ -37,11 +40,19 @@ public class OrderMetaBuilder extends AbstractTeslerMeta<OrderIssueDTO> {
 				OrderIssueDTO_.departurePoint,
 				OrderIssueDTO_.destinationPoint
 		);
-		fields.setDrilldown(
-				OrderIssueDTO_.id,
-				DrillDownType.INNER,
-				bcUrl(ScreenViews.ORDER_SCREEN_EDIT_ORDER_VIEW, editOrderForm, rowId)
-		);
+		if (orderList.isBc(bcDescription)) {
+			fields.setDrilldown(
+					OrderIssueDTO_.id,
+					DrillDownType.INNER,
+					bcUrl(ScreenViews.ORDER_SCREEN_EDIT_ORDER_VIEW, editOrderForm, rowId)
+			);
+		} else if (orderArchiveList.isBc(bcDescription)) {
+				fields.setDrilldown(
+						OrderIssueDTO_.id,
+						DrillDownType.INNER,
+						bcUrl(ScreenViews.ORDER_SCREEN_ORDER_ARCHIVE_INFO_VIEW, orderArchiveInfo, rowId)
+				);
+		}
 	}
 
 	@Override

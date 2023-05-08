@@ -1,0 +1,130 @@
+{
+  "name": "OrderArchiveInfo",
+  "title": "Общая информация",
+  "type": "Info",
+  "bc": "orderArchiveInfo",
+  "showCondition": [],
+  "fields": [
+    {
+      "blockId": "1",
+      "name": "",
+      "fields": [
+        {
+          "label": "Название",
+          "key": "name",
+          "type": "input"
+        },
+        {
+          "label": "Тип заказа",
+          "key": "typeCd",
+          "type": "dictionary"
+        },
+        {
+          "label": "Статус заказа",
+          "key": "statusCd",
+          "type": "dictionary"
+        },
+        {
+          "label": "Дата завершения",
+          "key": "completionDate",
+          "type": "date"
+        },
+        {
+          "label": "Пункт отправки",
+          "key": "departurePoint",
+          "type": "input"
+        },
+        {
+          "label": "Пункт назначения",
+          "key": "destinationPoint",
+          "type": "input"
+        },
+        {
+          "label": "Исполнитель",
+          "key": "driverFio",
+          "type": "input"
+        },
+        {
+          "label": "Комментарий",
+          "key": "comment",
+          "type": "input"
+        }
+      ]
+    }
+  ],
+  "axisFields": [],
+  "chart": [],
+  "options": {
+    "actionGroups": {
+      "include": []
+    },
+    "layout": {
+      "rows": [
+        {
+          "cols": [
+            {
+              "fieldKey": "name",
+              "span": 24
+            }
+          ]
+        },
+        {
+          "cols": [
+            {
+              "fieldKey": "typeCd",
+              "span": 24
+            }
+          ]
+        },
+        {
+          "cols": [
+            {
+              "fieldKey": "statusCd",
+              "span": 24
+            }
+          ]
+        },
+        {
+          "cols": [
+            {
+              "fieldKey": "completionDate",
+              "span": 24
+            }
+          ]
+        },
+        {
+          "cols": [
+            {
+              "fieldKey": "departurePoint",
+              "span": 24
+            }
+          ]
+        },
+        {
+          "cols": [
+            {
+              "fieldKey": "destinationPoint",
+              "span": 24
+            }
+          ]
+        },
+        {
+          "cols": [
+            {
+              "fieldKey": "driverFio",
+              "span": 24
+            }
+          ]
+        },
+        {
+          "cols": [
+            {
+              "fieldKey": "comment",
+              "span": 24
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

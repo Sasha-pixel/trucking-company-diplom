@@ -1,8 +1,8 @@
 {
-  "name": "editorderform",
+  "name": "orderarchiveinfo",
   "title": "Информация о заказе",
   "template": "DashboardView",
-  "url": "/screen/order/view/editorderform",
+  "url": "/screen/order/view/orderarchiveinfo",
   "widgets": [
     {
       "widgetName": "SecondLevelMenu",
@@ -10,18 +10,13 @@
       "gridWidth": 24
     },
     {
-      "widgetName": "EditOrderForm",
+      "widgetName": "OrderArchiveInfo",
       "position": 1,
       "gridWidth": 24
     },
     {
-      "widgetName": "EditOrderCargoForm",
-      "position": 2,
-      "gridWidth": 24
-    },
-    {
-      "widgetName": "OrderDriverPickListPopUp",
-      "position": 10,
+      "widgetName": "CargoArchiveInfo",
+      "position": 1,
       "gridWidth": 24
     }
   ],

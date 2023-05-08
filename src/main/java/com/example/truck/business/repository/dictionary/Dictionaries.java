@@ -39,6 +39,8 @@ public class Dictionaries extends CoreDictionaries {
 
 		public static final LOV COMPLETED = new LOV("COMPLETED");
 
+		public static final LOV CANCELLED = new LOV("CANCELLED");
+
 	}
 
 	@UtilityClass
