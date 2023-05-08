@@ -35,6 +35,11 @@
       "title": "Техническое состояние",
       "key": "technicalConditionCd",
       "type": "dictionary"
+    },
+    {
+      "title": "Тип перевозимых грузов",
+      "key": "cargoTypeCd",
+      "type": "dictionary"
     }
   ],
   "axisFields": [],

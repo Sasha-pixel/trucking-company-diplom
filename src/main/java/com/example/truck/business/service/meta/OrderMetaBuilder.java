@@ -59,6 +59,14 @@ public class OrderMetaBuilder extends AbstractTeslerMeta<OrderIssueDTO> {
 	public void buildIndependentMeta(final FieldsMeta<OrderIssueDTO> fields, final InnerBcDescription bcDescription, final Long parentId) {
 		fields.setDictionaryTypeWithAllValues(OrderIssueDTO_.typeCd, AppDictionaryType.ORDER_TYPE_CD);
 		fields.setDictionaryTypeWithAllValues(OrderIssueDTO_.statusCd, AppDictionaryType.ORDER_STATUS_CD);
+		fields.enableFilter(
+				OrderIssueDTO_.name,
+				OrderIssueDTO_.typeCd,
+				OrderIssueDTO_.statusCd,
+				OrderIssueDTO_.driverFio
+		);
+		fields.setAllFilterValuesByLovType(OrderIssueDTO_.typeCd, AppDictionaryType.ORDER_TYPE_CD);
+		fields.setAllFilterValuesByLovType(OrderIssueDTO_.statusCd, AppDictionaryType.ORDER_STATUS_CD);
 	}
 
 }

@@ -14,6 +14,8 @@ import com.example.truck.business.repository.entity.Driver;
 import com.example.truck.business.repository.entity.Truck;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.tesler.api.data.dto.DataResponseDTO;
+import io.tesler.core.util.filter.SearchParameter;
+import io.tesler.core.util.filter.provider.impl.LovValueProvider;
 
 @Getter
 @Setter
@@ -27,19 +29,25 @@ public class TruckDTO extends DataResponseDTO {
 
 	private String driverFio;
 
+	@SearchParameter
 	private String carNumber;
 
+	@SearchParameter
 	private String model;
 
+	@SearchParameter(provider = LovValueProvider.class)
 	@DictionaryType(AppDictionaryType.TRUCK_TYPE_CD)
 	private String typeCd;
 
+	@SearchParameter(provider = LovValueProvider.class)
 	@DictionaryType(AppDictionaryType.TRUCK_TECHNICAL_CONDITION_CD)
 	private String technicalConditionCd;
 
+	@SearchParameter(provider = LovValueProvider.class)
 	@DictionaryType(AppDictionaryType.TRUCK_STATUS_CD)
 	private String statusCd;
 
+	@SearchParameter(provider = LovValueProvider.class)
 	@DictionaryType(AppDictionaryType.CARGO_TYPE_CD)
 	private String cargoTypeCd;
 

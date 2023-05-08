@@ -59,6 +59,18 @@ public class TruckMetaBuilder extends AbstractTeslerMeta<TruckDTO> {
 		fields.setDictionaryTypeWithAllValues(TruckDTO_.statusCd, AppDictionaryType.TRUCK_STATUS_CD);
 		fields.setDictionaryTypeWithAllValues(TruckDTO_.technicalConditionCd, AppDictionaryType.TRUCK_TECHNICAL_CONDITION_CD);
 		fields.setDictionaryTypeWithAllValues(TruckDTO_.cargoTypeCd, AppDictionaryType.CARGO_TYPE_CD);
+		fields.enableFilter(
+				TruckDTO_.carNumber,
+				TruckDTO_.model,
+				TruckDTO_.typeCd,
+				TruckDTO_.statusCd,
+				TruckDTO_.technicalConditionCd,
+				TruckDTO_.cargoTypeCd
+		);
+		fields.setAllFilterValuesByLovType(TruckDTO_.typeCd, AppDictionaryType.TRUCK_TYPE_CD);
+		fields.setAllFilterValuesByLovType(TruckDTO_.statusCd, AppDictionaryType.TRUCK_STATUS_CD);
+		fields.setAllFilterValuesByLovType(TruckDTO_.technicalConditionCd, AppDictionaryType.TRUCK_TECHNICAL_CONDITION_CD);
+		fields.setAllFilterValuesByLovType(TruckDTO_.cargoTypeCd, AppDictionaryType.CARGO_TYPE_CD);
 	}
 
 }

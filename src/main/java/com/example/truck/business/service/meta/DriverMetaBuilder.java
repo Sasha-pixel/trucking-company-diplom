@@ -34,6 +34,14 @@ public class DriverMetaBuilder extends AbstractTeslerMeta<DriverDTO> {
 	@Override
 	public void buildIndependentMeta(final FieldsMeta<DriverDTO> fields, final InnerBcDescription bcDescription, final Long parentId) {
 		fields.setDictionaryTypeWithAllValues(DriverDTO_.statusCd, AppDictionaryType.DRIVER_STATUS_CD);
+		fields.enableFilter(
+				DriverDTO_.fio,
+				DriverDTO_.phone,
+				DriverDTO_.email,
+				DriverDTO_.statusCd,
+				DriverDTO_.truckModel
+		);
+		fields.setAllFilterValuesByLovType(DriverDTO_.statusCd, AppDictionaryType.DRIVER_STATUS_CD);
 	}
 
 }

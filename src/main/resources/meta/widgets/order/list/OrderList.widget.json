@@ -27,6 +27,11 @@
       "type": "dictionary"
     },
     {
+      "title": "ФИО исполнителя",
+      "key": "driverFio",
+      "type": "input"
+    },
+    {
       "title": "Дата завершения",
       "key": "completionDate",
       "type": "date"
