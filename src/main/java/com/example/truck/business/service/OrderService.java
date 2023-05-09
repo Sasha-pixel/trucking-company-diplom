@@ -61,6 +61,12 @@ public class OrderService extends AbstractTeslerService<OrderIssueDTO, OrderIssu
 				.action("cancel-order", "Отменить").withoutIcon()
 				.available(this::isOrderCancellationAvailable).invoker(this::cancelOrder)
 				.add()
+				.action("copy-order", "Копировать").withoutIcon()
+				.invoker(this::copyOrder)
+				.add()
+				.action("publish-order", "Опубликовать").withoutIcon()
+				.available(this::isOrderInDraftStatus).invoker(this::publishOrder)
+				.add()
 				.build();
 	}
 
@@ -132,8 +138,36 @@ public class OrderService extends AbstractTeslerService<OrderIssueDTO, OrderIssu
 				.orElse(false);
 	}
 
+	private boolean isOrderInDraftStatus(final BusinessComponent bc) {
+		return Optional.ofNullable(bc.getIdAsLong())
+				.map(orderIssueRepository::getById)
+				.map(OrderIssue::getStatusCd)
+				.map(ORDER_STATUS_CD.DRAFT::equals)
+				.orElse(false);
+	}
+
 	private ActionResultDTO<OrderIssueDTO> cancelOrder(final BusinessComponent bc, final OrderIssueDTO dto) {
 		orderIssueRepository.getById(bc.getIdAsLong()).setStatusCd(ORDER_STATUS_CD.CANCELLED);
+		return new ActionResultDTO<OrderIssueDTO>().setAction(PostAction.refreshBc(bc));
+	}
+
+	private ActionResultDTO<OrderIssueDTO> copyOrder(final BusinessComponent bc, final OrderIssueDTO dto) {
+		final OrderIssue copy = orderIssueRepository.save(
+				orderIssueRepository.getById(bc.getIdAsLong())
+						.copy()
+						.build()
+		);
+		return new ActionResultDTO<>(entityToDto(bc, copy))
+				.setAction(
+						CustomPostAction.innerDrillDown(
+								ScreenViews.ORDER_SCREEN_EDIT_ORDER_VIEW,
+								editOrderForm,
+								copy.getId()
+						));
+	}
+
+	private ActionResultDTO<OrderIssueDTO> publishOrder(final BusinessComponent bc, final OrderIssueDTO dto) {
+		orderIssueRepository.getById(bc.getIdAsLong()).setStatusCd(ORDER_STATUS_CD.NEW);
 		return new ActionResultDTO<OrderIssueDTO>().setAction(PostAction.refreshBc(bc));
 	}
 

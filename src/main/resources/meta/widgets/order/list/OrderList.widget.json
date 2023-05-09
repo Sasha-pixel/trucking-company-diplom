@@ -44,7 +44,9 @@
     "actionGroups": {
       "include": [
         "create",
-        "cancel-order"
+        "cancel-order",
+        "copy-order",
+        "publish-order"
       ]
     }
   }

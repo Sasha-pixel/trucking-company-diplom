@@ -56,7 +56,10 @@
   "options": {
     "actionGroups": {
       "include": [
-        "save"
+        "save",
+        "cancel-order",
+        "copy-order",
+        "publish-order"
       ]
     },
     "layout": {

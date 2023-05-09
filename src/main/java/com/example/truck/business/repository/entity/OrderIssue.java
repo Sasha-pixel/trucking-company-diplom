@@ -16,6 +16,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import com.example.truck.business.repository.dictionary.AppDictionaryType;
+import com.example.truck.business.repository.dictionary.Dictionaries.ORDER_STATUS_CD;
 import com.example.truck.business.repository.dictionary.DictionaryType;
 import com.example.truck.infrastructure.serializtion.IdBaseEntitySerializer;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
@@ -64,5 +65,13 @@ public class OrderIssue extends BaseEntity {
 
 	@OneToOne(mappedBy = "orderIssue", cascade = CascadeType.ALL, orphanRemoval = true)
 	private Cargo cargo;
+
+	public OrderIssueBuilder copy() {
+		return this.toBuilder()
+				.statusCd(ORDER_STATUS_CD.DRAFT)
+				.driver(null)
+				.cargo(this.cargo.copy().build())
+				.comment(null);
+	}
 
 }

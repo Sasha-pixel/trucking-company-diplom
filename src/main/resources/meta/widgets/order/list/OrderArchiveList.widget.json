@@ -37,7 +37,9 @@
   "options": {
     "readOnly": true,
     "actionGroups": {
-      "include": []
+      "include": [
+        "copy-order"
+      ]
     }
   }
 }

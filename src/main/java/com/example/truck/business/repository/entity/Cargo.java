@@ -49,4 +49,9 @@ public class Cargo extends BaseEntity {
 	@JsonSerialize(using = IdBaseEntitySerializer.class)
 	private OrderIssue orderIssue;
 
+	public CargoBuilder copy() {
+		return this.toBuilder()
+				.orderIssue(null);
+	}
+
 }
