@@ -1,5 +1,9 @@
 app:
   ui-path: /ui
+  api-path: /external
+  authentication:
+    api-key-header: x-api-key
+    api-key: TrckCmpn
   keycloak:
     realm: ${KEYCLOAK_REALM}
     auth-server-url: ${FRONTEND_AUTH_SERVER_URL}

@@ -1,4 +1,4 @@
-package com.example.truck.infrastructure.keycloak;
+package com.example.truck.infrastructure.security.keycloak;
 
 import java.security.Principal;
 import java.util.Set;
