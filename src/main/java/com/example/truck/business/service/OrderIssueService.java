@@ -31,7 +31,7 @@ import static com.example.truck.business.controller.TeslerRestController.orderAr
 import static com.example.truck.business.controller.TeslerRestController.orderList;
 
 @Service
-public class OrderService extends AbstractTeslerService<OrderIssueDTO, OrderIssue> {
+public class OrderIssueService extends AbstractTeslerService<OrderIssueDTO, OrderIssue> {
 
 	private final OrderIssueRepository orderIssueRepository;
 
@@ -41,7 +41,7 @@ public class OrderService extends AbstractTeslerService<OrderIssueDTO, OrderIssu
 
 	private final List<LOV> CANCELABLE_ORDER_STATUSES = List.of(ORDER_STATUS_CD.DRAFT, ORDER_STATUS_CD.BOOKED, ORDER_STATUS_CD.NEW);
 
-	public OrderService(
+	public OrderIssueService(
 			final OrderIssueRepository orderIssueRepository,
 			final DriverRepository driverRepository,
 			final CargoRepository cargoRepository

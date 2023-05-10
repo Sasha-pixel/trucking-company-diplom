@@ -63,7 +63,9 @@ public class OrderIssue extends BaseEntity {
 	@Column(name = "COMMENT")
 	private String comment;
 
-	@OneToOne(mappedBy = "orderIssue", cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+	@JoinColumn(name = "CARGO_ID")
+	@JsonSerialize(using = IdBaseEntitySerializer.class)
 	private Cargo cargo;
 
 	public OrderIssueBuilder copy() {

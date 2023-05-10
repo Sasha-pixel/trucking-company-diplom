@@ -48,7 +48,7 @@ public class CargoService extends AbstractTeslerService<CargoDTO, Cargo> {
 		return new ActionResultDTO<>(entityToDto(bc, entity))
 				.setAction(
 						CustomPostAction.innerDrillDown(
-								ScreenViews.ORDER_SCREEN_EDIT_ORDER_CARGO_VIEW,
+								ScreenViews.ORDER_SCREEN_EDIT_ORDER_VIEW,
 								editOrderForm,
 								bc.getParentIdAsLong()
 						));

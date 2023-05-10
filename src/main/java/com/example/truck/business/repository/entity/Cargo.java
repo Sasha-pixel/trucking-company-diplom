@@ -44,9 +44,7 @@ public class Cargo extends BaseEntity {
 	@Column(name = "WEIGHT")
 	private Long weight;
 
-	@OneToOne
-	@JoinColumn(name = "ORDER_ISSUE_ID")
-	@JsonSerialize(using = IdBaseEntitySerializer.class)
+	@OneToOne(mappedBy = "cargo")
 	private OrderIssue orderIssue;
 
 	public CargoBuilder copy() {

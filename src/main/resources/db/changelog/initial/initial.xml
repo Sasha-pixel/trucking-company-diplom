@@ -67,6 +67,34 @@
     </createTable>
   </changeSet>
 
+  <changeSet id="CREATE CARGO TABLE" author="INITIAL">
+    <createTable tableName="CARGO">
+      <column name="ID" type="BIGINT" remarks="Идентификатор">
+        <constraints nullable="false" primaryKey="true"/>
+      </column>
+      <column name="CREATED_DATE" type="TIMESTAMP" remarks="Дата создания" defaultValueComputed="current_timestamp">
+        <constraints nullable="false"/>
+      </column>
+      <column name="CREATED_BY_USER_ID" type="BIGINT" remarks="Пользователь, который создал" defaultValueNumeric="1">
+        <constraints nullable="false" foreignKeyName="FK__CARGO__CREATED_BY_USER_ID__USERS__ID" references="USERS"/>
+      </column>
+      <column name="UPDATED_DATE" type="TIMESTAMP" remarks="Дата изменения" defaultValueComputed="current_timestamp">
+        <constraints nullable="false"/>
+      </column>
+      <column name="LAST_UPD_BY_USER_ID" type="BIGINT" remarks="Пользователь, который внес последнее изменение" defaultValueNumeric="1">
+        <constraints nullable="false" foreignKeyName="FK__CARGO__LAST_UPD_BY_USER_ID__USERS__ID" references="USERS"/>
+      </column>
+      <column name="VSTAMP" type="BIGINT" remarks="Версия для оптимистичной блокировки" defaultValueNumeric="0">
+        <constraints nullable="false"/>
+      </column>
+      <column name="NAME" type="TEXT" remarks="Название груза"/>
+      <column name="CARGO_TYPE_CD" type="TEXT" remarks="Тип груза"/>
+      <column name="DIMENSION_WIDTH" type="DECIMAL" remarks="Габаритная ширина груза"/>
+      <column name="DIMENSION_LENGTH" type="DECIMAL" remarks="Габаритная длина груза"/>
+      <column name="WEIGHT" type="BIGINT" remarks="Вес груза"/>
+    </createTable>
+  </changeSet>
+
   <changeSet id="CREATE ORDER TABLE" author="INITIAL">
     <createTable tableName="ORDER_ISSUE">
       <column name="ID" type="BIGINT" remarks="Идентификатор">
@@ -100,36 +128,8 @@
       <column name="DEPARTURE_POINT" type="TEXT" remarks="Пункт отправления заказа"/>
       <column name="DESTINATION_POINT" type="TEXT" remarks="Место назначения"/>
       <column name="COMMENT" type="TEXT" remarks="Комментарий"/>
-    </createTable>
-  </changeSet>
-
-  <changeSet id="CREATE CARGO TABLE" author="INITIAL">
-    <createTable tableName="CARGO">
-      <column name="ID" type="BIGINT" remarks="Идентификатор">
-        <constraints nullable="false" primaryKey="true"/>
-      </column>
-      <column name="CREATED_DATE" type="TIMESTAMP" remarks="Дата создания" defaultValueComputed="current_timestamp">
-        <constraints nullable="false"/>
-      </column>
-      <column name="CREATED_BY_USER_ID" type="BIGINT" remarks="Пользователь, который создал" defaultValueNumeric="1">
-        <constraints nullable="false" foreignKeyName="FK__CARGO__CREATED_BY_USER_ID__USERS__ID" references="USERS"/>
-      </column>
-      <column name="UPDATED_DATE" type="TIMESTAMP" remarks="Дата изменения" defaultValueComputed="current_timestamp">
-        <constraints nullable="false"/>
-      </column>
-      <column name="LAST_UPD_BY_USER_ID" type="BIGINT" remarks="Пользователь, который внес последнее изменение" defaultValueNumeric="1">
-        <constraints nullable="false" foreignKeyName="FK__CARGO__LAST_UPD_BY_USER_ID__USERS__ID" references="USERS"/>
-      </column>
-      <column name="VSTAMP" type="BIGINT" remarks="Версия для оптимистичной блокировки" defaultValueNumeric="0">
-        <constraints nullable="false"/>
-      </column>
-      <column name="NAME" type="TEXT" remarks="Название груза"/>
-      <column name="CARGO_TYPE_CD" type="TEXT" remarks="Тип груза"/>
-      <column name="DIMENSION_WIDTH" type="DECIMAL" remarks="Габаритная ширина груза"/>
-      <column name="DIMENSION_LENGTH" type="DECIMAL" remarks="Габаритная длина груза"/>
-      <column name="WEIGHT" type="BIGINT" remarks="Вес груза"/>
-      <column name="ORDER_ISSUE_ID" type="BIGINT" remarks="Идентификатор заказа">
-        <constraints foreignKeyName="FK__CARGO__ORDER_ISSUE_ID__ORDER_ISSUE__ID" references="ORDER_ISSUE"/>
+      <column name="CARGO_ID" type="BIGINT" remarks="Идентификатор груза">
+        <constraints foreignKeyName="FK__ORDER_ISSUE__CARGO_ID__CARGO__ID" references="CARGO"/>
       </column>
     </createTable>
   </changeSet>

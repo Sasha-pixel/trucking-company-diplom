@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 import com.example.truck.business.service.CargoService;
 import com.example.truck.business.service.DriverService;
-import com.example.truck.business.service.OrderService;
+import com.example.truck.business.service.OrderIssueService;
 import com.example.truck.business.service.TruckService;
 import io.tesler.core.crudma.bc.BcIdentifier;
 import io.tesler.core.crudma.bc.EnumBcIdentifier;
@@ -25,13 +25,13 @@ public enum TeslerRestController implements EnumBcIdentifier {
 
 	// @formatter:on
 
-	orderList(OrderService.class),
-		createOrderForm(OrderService.class),
-		editOrderForm(orderList, OrderService.class),
+	orderList(OrderIssueService.class),
+		createOrderForm(OrderIssueService.class),
+		editOrderForm(orderList, OrderIssueService.class),
 			orderDriverPickList(editOrderForm, DriverService.class),
 			editOrderCargoForm(editOrderForm, CargoService.class),
-	orderArchiveList(OrderService.class),
-		orderArchiveInfo(orderArchiveList, OrderService.class),
+	orderArchiveList(OrderIssueService.class),
+		orderArchiveInfo(orderArchiveList, OrderIssueService.class),
 			cargoArchiveInfo(orderArchiveInfo, CargoService.class),
 
 	driverList(DriverService.class),
