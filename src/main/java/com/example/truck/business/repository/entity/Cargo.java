@@ -2,7 +2,6 @@ package com.example.truck.business.repository.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -14,8 +13,6 @@ import lombok.Setter;
 
 import com.example.truck.business.repository.dictionary.AppDictionaryType;
 import com.example.truck.business.repository.dictionary.DictionaryType;
-import com.example.truck.infrastructure.serializtion.IdBaseEntitySerializer;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import io.tesler.api.data.dictionary.LOV;
 import io.tesler.model.core.entity.BaseEntity;
 

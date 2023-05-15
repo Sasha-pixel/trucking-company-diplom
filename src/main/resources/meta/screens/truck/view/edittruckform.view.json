@@ -16,7 +16,7 @@
     }
   ],
   "rolesAllowed": [
-    "OPERATOR",
-    "REVIEWER"
+    "CAR_OPERATOR",
+    "SUPERVISOR"
   ]
 }

@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import com.example.truck.business.dto.CargoDTO;
 import com.example.truck.business.dto.CargoDTO_;
 import com.example.truck.business.repository.dictionary.AppDictionaryType;
+import com.example.truck.business.repository.dictionary.Dictionaries.INTERNAL_ROLE;
 import io.tesler.core.crudma.bc.impl.InnerBcDescription;
 import io.tesler.core.dto.rowmeta.FieldsMeta;
 import io.tesler.core.dto.rowmeta.RowDependentFieldsMeta;
@@ -29,6 +30,9 @@ public class CargoMetaBuilder extends AbstractTeslerMeta<CargoDTO> {
 				CargoDTO_.dimensionLength,
 				CargoDTO_.weight
 		);
+		if (currentUserRole(INTERNAL_ROLE.SUPERVISOR)) {
+			fields.disableFields();
+		}
 	}
 
 	@Override

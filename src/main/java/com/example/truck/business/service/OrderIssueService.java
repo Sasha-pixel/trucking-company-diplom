@@ -55,15 +55,15 @@ public class OrderIssueService extends AbstractTeslerService<OrderIssueDTO, Orde
 	@Override
 	public Actions<OrderIssueDTO> getActions() {
 		return Actions.<OrderIssueDTO>builder()
-				.create().withoutIcon().add()
-				.cancelCreate().withoutIcon().add()
-				.save().withoutIcon().add()
+				.create().withoutIcon().available(this::isNotSupervisor).add()
+				.cancelCreate().withoutIcon().available(this::isNotSupervisor).add()
+				.save().withoutIcon().available(this::isNotSupervisor).add()
 				.action("cancel-order", "Отменить").withoutIcon()
 				.available(this::isOrderCancellationAvailable).invoker(this::cancelOrder)
 				.add()
 				.action("copy-order", "Копировать").withoutIcon()
 				.invoker(this::copyOrder)
-				.add()
+				.available(this::isNotSupervisor).add()
 				.action("publish-order", "Опубликовать").withoutIcon()
 				.available(this::isOrderInDraftStatus).invoker(this::publishOrder)
 				.add()
@@ -135,7 +135,7 @@ public class OrderIssueService extends AbstractTeslerService<OrderIssueDTO, Orde
 				.map(orderIssueRepository::getById)
 				.map(OrderIssue::getStatusCd)
 				.map(CANCELABLE_ORDER_STATUSES::contains)
-				.orElse(false);
+				.orElse(false) && isNotSupervisor(bc);
 	}
 
 	private boolean isOrderInDraftStatus(final BusinessComponent bc) {
@@ -143,7 +143,7 @@ public class OrderIssueService extends AbstractTeslerService<OrderIssueDTO, Orde
 				.map(orderIssueRepository::getById)
 				.map(OrderIssue::getStatusCd)
 				.map(ORDER_STATUS_CD.DRAFT::equals)
-				.orElse(false);
+				.orElse(false) && isNotSupervisor(bc);
 	}
 
 	private ActionResultDTO<OrderIssueDTO> cancelOrder(final BusinessComponent bc, final OrderIssueDTO dto) {

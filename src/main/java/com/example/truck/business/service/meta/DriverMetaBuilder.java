@@ -6,6 +6,7 @@ import com.example.truck.business.dto.DriverDTO;
 import com.example.truck.business.dto.DriverDTO_;
 import com.example.truck.business.dto.OrderIssueDTO_;
 import com.example.truck.business.repository.dictionary.AppDictionaryType;
+import com.example.truck.business.repository.dictionary.Dictionaries.INTERNAL_ROLE;
 import com.example.truck.business.service.util.DrillDownUtils.ScreenViews;
 import io.tesler.core.crudma.bc.impl.InnerBcDescription;
 import io.tesler.core.dto.DrillDownType;
@@ -23,7 +24,9 @@ public class DriverMetaBuilder extends AbstractTeslerMeta<DriverDTO> {
 																		final Long parentId) {
 		fields.setEnabled(DriverDTO_.fio, DriverDTO_.phone, DriverDTO_.email);
 		fields.setRequired(DriverDTO_.fio, DriverDTO_.phone, DriverDTO_.email);
-
+		if (currentUserRole(INTERNAL_ROLE.SUPERVISOR)) {
+			fields.disableFields();
+		}
 		fields.setDrilldown(
 				OrderIssueDTO_.id,
 				DrillDownType.INNER,

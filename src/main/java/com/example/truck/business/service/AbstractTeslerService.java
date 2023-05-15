@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.repository.JpaRepository;
 
+import com.example.truck.business.repository.dictionary.Dictionaries.INTERNAL_ROLE;
 import org.apache.commons.lang3.StringUtils;
 import io.tesler.api.data.dictionary.IDictionaryType;
 import io.tesler.api.data.dictionary.LOV;
@@ -29,6 +30,10 @@ public abstract class AbstractTeslerService<T extends DataResponseDTO, E extends
 
 	@Autowired
 	private SessionService sessionService;
+
+	protected boolean isNotSupervisor(final BusinessComponent bc) {
+		return !INTERNAL_ROLE.SUPERVISOR.equals(getCurrentUserRole());
+	}
 
 	protected AbstractTeslerService(final Class<T> typeOfDTO, Class<E> typeOfEntity,
 																	final SingularAttribute<? super E, ? extends BaseEntity> parentSpec,

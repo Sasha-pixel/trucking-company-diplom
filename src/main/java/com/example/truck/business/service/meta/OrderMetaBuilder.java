@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import com.example.truck.business.dto.OrderIssueDTO;
 import com.example.truck.business.dto.OrderIssueDTO_;
 import com.example.truck.business.repository.dictionary.AppDictionaryType;
+import com.example.truck.business.repository.dictionary.Dictionaries.INTERNAL_ROLE;
 import com.example.truck.business.service.util.DrillDownUtils.ScreenViews;
 import io.tesler.core.crudma.bc.impl.InnerBcDescription;
 import io.tesler.core.dto.DrillDownType;
@@ -40,6 +41,9 @@ public class OrderMetaBuilder extends AbstractTeslerMeta<OrderIssueDTO> {
 				OrderIssueDTO_.departurePoint,
 				OrderIssueDTO_.destinationPoint
 		);
+		if (currentUserRole(INTERNAL_ROLE.SUPERVISOR)) {
+			fields.disableFields();
+		}
 		if (orderList.isBc(bcDescription)) {
 			fields.setDrilldown(
 					OrderIssueDTO_.id,

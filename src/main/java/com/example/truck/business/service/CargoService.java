@@ -27,7 +27,7 @@ public class CargoService extends AbstractTeslerService<CargoDTO, Cargo> {
 	@Override
 	public Actions<CargoDTO> getActions() {
 		return Actions.<CargoDTO>builder()
-				.save().withoutIcon().add()
+				.save().withoutIcon().available(this::isNotSupervisor).add()
 				.build();
 	}
 

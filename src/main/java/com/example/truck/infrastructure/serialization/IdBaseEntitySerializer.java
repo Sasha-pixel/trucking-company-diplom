@@ -1,4 +1,4 @@
-package com.example.truck.infrastructure.serializtion;
+package com.example.truck.infrastructure.serialization;
 
 import java.io.IOException;
 import javax.persistence.Entity;

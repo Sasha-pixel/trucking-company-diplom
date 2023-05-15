@@ -15,6 +15,14 @@ public class Dictionaries extends CoreDictionaries {
 
 		public static final LOV TESLER_USER = new LOV("TESLER_USER");
 
+		public static final LOV SUPERVISOR = new LOV("SUPERVISOR");
+
+		public static final LOV CAR_OPERATOR = new LOV("CAR_OPERATOR");
+
+		public static final LOV PERSONAL_OPERATOR = new LOV("PERSONAL_OPERATOR");
+
+		public static final LOV ORDER_OPERATOR = new LOV("ORDER_OPERATOR");
+
 	}
 
 	@UtilityClass

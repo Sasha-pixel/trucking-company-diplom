@@ -16,7 +16,7 @@
     }
   ],
   "rolesAllowed": [
-    "OPERATOR",
-    "REVIEWER"
+    "ORDER_OPERATOR",
+    "SUPERVISOR"
   ]
 }

@@ -6,6 +6,7 @@ import com.example.truck.business.dto.OrderIssueDTO_;
 import com.example.truck.business.dto.TruckDTO;
 import com.example.truck.business.dto.TruckDTO_;
 import com.example.truck.business.repository.dictionary.AppDictionaryType;
+import com.example.truck.business.repository.dictionary.Dictionaries.INTERNAL_ROLE;
 import com.example.truck.business.service.util.DrillDownUtils.ScreenViews;
 import io.tesler.core.crudma.bc.impl.InnerBcDescription;
 import io.tesler.core.dto.DrillDownType;
@@ -45,7 +46,9 @@ public class TruckMetaBuilder extends AbstractTeslerMeta<TruckDTO> {
 				TruckDTO_.dimensionLength,
 				TruckDTO_.loadCapacity
 		);
-
+		if (currentUserRole(INTERNAL_ROLE.SUPERVISOR)) {
+			fields.disableFields();
+		}
 		fields.setDrilldown(
 				OrderIssueDTO_.id,
 				DrillDownType.INNER,

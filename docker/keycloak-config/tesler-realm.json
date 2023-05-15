@@ -1,8 +1,8 @@
 {
   "id" : "tesler",
   "realm" : "tesler",
-  "displayName" : "Tesler Demo",
-  "displayNameHtml" : "<div><b>Tesler Demo</b> <p></p></div><div style=\"text-transform: lowercase;\"><a href=\"https://github.com/tesler-platform/tesler-demo\">Github</a></div><p style=\"text-transform: lowercase;\"> username: demo / password: demo</p>",
+  "displayName" : "Информационная система компании грузоперевозок",
+  "displayNameHtml" : "<div><b>Информационная система компании грузоперевозок</b> <p></p></div><div style=\"text-transform: uppercase;\">Работу выполнил студент группы ИКБО-03-19 Каненков А.А.</div>",
   "notBefore" : 0,
   "revokeRefreshToken" : false,
   "refreshTokenMaxReuse" : 0,
@@ -309,6 +309,22 @@
         "attributes" : { }
       } ],
       "tesler-keycloak-client" : [ {
+        "id" : "40d62894-93a6-439e-8bdf-5386de206926",
+        "name" : "CAR_OPERATOR",
+        "description" : "Оператор автопарка",
+        "composite" : false,
+        "clientRole" : true,
+        "containerId" : "4a726c64-c69e-4ec8-8df1-bdb983a902c3",
+        "attributes" : { }
+      }, {
+        "id" : "fbd48226-0764-4eb0-8827-3fa6a4b2cd49",
+        "name" : "PERSONAL_OPERATOR",
+        "description" : "Оператор персонала",
+        "composite" : false,
+        "clientRole" : true,
+        "containerId" : "4a726c64-c69e-4ec8-8df1-bdb983a902c3",
+        "attributes" : { }
+      }, {
         "id" : "b433ea07-b72e-4de2-a507-499ebce48c14",
         "name" : "ADMIN",
         "composite" : false,
@@ -316,8 +332,9 @@
         "containerId" : "4a726c64-c69e-4ec8-8df1-bdb983a902c3",
         "attributes" : { }
       }, {
-        "id" : "8e5b89e9-6e07-47d3-b83c-332f3f8e2dd6",
-        "name" : "BUSINESS_ADMIN",
+        "id" : "c9600219-93b0-4554-9fb6-6d5d542c7c1d",
+        "name" : "ORDER_OPERATOR",
+        "description" : "Оператор заказов",
         "composite" : false,
         "clientRole" : true,
         "containerId" : "4a726c64-c69e-4ec8-8df1-bdb983a902c3",
@@ -330,15 +347,9 @@
         "containerId" : "4a726c64-c69e-4ec8-8df1-bdb983a902c3",
         "attributes" : { }
       }, {
-        "id" : "8f2685c9-d8eb-4d1c-a0eb-9c4a63ecc756",
-        "name" : "OPERATOR",
-        "composite" : false,
-        "clientRole" : true,
-        "containerId" : "4a726c64-c69e-4ec8-8df1-bdb983a902c3",
-        "attributes" : { }
-      }, {
-        "id" : "bc1af733-a15e-43fc-9abc-60685a4c8d71",
-        "name" : "REVIEWER",
+        "id" : "744f2837-1706-4fde-97ca-8d29f3bff402",
+        "name" : "SUPERVISOR",
+        "description" : "Супервизор",
         "composite" : false,
         "clientRole" : true,
         "containerId" : "4a726c64-c69e-4ec8-8df1-bdb983a902c3",
@@ -590,6 +601,7 @@
     "alwaysDisplayInConsole" : false,
     "clientAuthenticatorType" : "client-secret",
     "secret" : "751e5eef-c53b-461c-9585-cebf83ac32cd",
+    "defaultRoles" : [ "CAR_OPERATOR", "PERSONAL_OPERATOR", "ORDER_OPERATOR", "SUPERVISOR" ],
     "redirectUris" : [ "*" ],
     "webOrigins" : [ "*" ],
     "notBefore" : 0,

@@ -38,10 +38,10 @@ public class TruckService extends AbstractTeslerService<TruckDTO, Truck> {
 	@Override
 	public Actions<TruckDTO> getActions() {
 		return Actions.<TruckDTO>builder()
-				.create().withoutIcon().add()
-				.cancelCreate().withoutIcon().add()
-				.delete().withoutIcon().add()
-				.save().withoutIcon().add()
+				.create().withoutIcon().available(this::isNotSupervisor).add()
+				.cancelCreate().withoutIcon().available(this::isNotSupervisor).add()
+				.delete().withoutIcon().available(this::isNotSupervisor).add()
+				.save().withoutIcon().available(this::isNotSupervisor).add()
 				.build();
 	}
 
