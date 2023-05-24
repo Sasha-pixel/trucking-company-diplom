@@ -53,7 +53,6 @@ public class GetOrdersResponseDto {
 
 		private CargoDto cargo;
 
-
 		@Getter
 		@Setter
 		@Builder

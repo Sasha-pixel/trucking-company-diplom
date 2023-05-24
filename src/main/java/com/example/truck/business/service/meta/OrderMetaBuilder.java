@@ -51,11 +51,11 @@ public class OrderMetaBuilder extends AbstractTeslerMeta<OrderIssueDTO> {
 					bcUrl(ScreenViews.ORDER_SCREEN_EDIT_ORDER_VIEW, editOrderForm, rowId)
 			);
 		} else if (orderArchiveList.isBc(bcDescription)) {
-				fields.setDrilldown(
-						OrderIssueDTO_.id,
-						DrillDownType.INNER,
-						bcUrl(ScreenViews.ORDER_SCREEN_ORDER_ARCHIVE_INFO_VIEW, orderArchiveInfo, rowId)
-				);
+			fields.setDrilldown(
+					OrderIssueDTO_.id,
+					DrillDownType.INNER,
+					bcUrl(ScreenViews.ORDER_SCREEN_ORDER_ARCHIVE_INFO_VIEW, orderArchiveInfo, rowId)
+			);
 		}
 	}
 

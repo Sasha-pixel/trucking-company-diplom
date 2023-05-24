@@ -6,6 +6,7 @@ import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -16,7 +17,7 @@ public class ApiKeyAuthenticationFilter extends AbstractAuthenticationProcessing
 	private final String apiKeyHeader;
 
 	public ApiKeyAuthenticationFilter(final AuthenticationManager authenticationManager, final String processesUrl,
-			final String apiKeyHeader) {
+																		final String apiKeyHeader) {
 		super(processesUrl, authenticationManager);
 		this.apiKeyHeader = apiKeyHeader;
 	}
@@ -31,7 +32,7 @@ public class ApiKeyAuthenticationFilter extends AbstractAuthenticationProcessing
 
 	@Override
 	protected void successfulAuthentication(final HttpServletRequest request, final HttpServletResponse response,
-			final FilterChain chain, final Authentication authResult) throws IOException, ServletException {
+																					final FilterChain chain, final Authentication authResult) throws IOException, ServletException {
 		SecurityContextHolder.getContext().setAuthentication(authResult);
 		chain.doFilter(request, response);
 	}

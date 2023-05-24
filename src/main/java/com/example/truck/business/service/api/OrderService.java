@@ -52,9 +52,9 @@ public class OrderService {
 
 	public List<GetOrdersResponseDto> getOrders(final Integer page, final Integer size) {
 		return orderIssueRepository.findAll(
-				OrderIssueRepository.findAllAvailableOrders(),
-				PageRequest.of(page, size, GET_ORDER_LIST_SORT)
-		).stream()
+						OrderIssueRepository.findAllAvailableOrders(),
+						PageRequest.of(page, size, GET_ORDER_LIST_SORT)
+				).stream()
 				.map(OrderDtoMapper::mapEntityToDto)
 				.toList();
 	}

@@ -66,7 +66,12 @@ public class TruckService extends AbstractTeslerService<TruckDTO, Truck> {
 			setIfChanged(data, TruckDTO_.model, entity::setModel);
 			setIfChanged(data, TruckDTO_.carNumber, entity::setCarNumber);
 			setMappedIfChanged(data, TruckDTO_.typeCd, entity::setTypeCd, AppDictionaryType.TRUCK_TYPE_CD::lookupName);
-			setMappedIfChanged(data, TruckDTO_.technicalConditionCd, entity::setTechnicalConditionCd, AppDictionaryType.TRUCK_TECHNICAL_CONDITION_CD::lookupName);
+			setMappedIfChanged(
+					data,
+					TruckDTO_.technicalConditionCd,
+					entity::setTechnicalConditionCd,
+					AppDictionaryType.TRUCK_TECHNICAL_CONDITION_CD::lookupName
+			);
 			setMappedIfChanged(data, TruckDTO_.statusCd, entity::setStatusCd, AppDictionaryType.TRUCK_STATUS_CD::lookupName);
 			setMappedIfChanged(data, TruckDTO_.cargoTypeCd, entity::setCargoTypeCd, AppDictionaryType.CARGO_TYPE_CD::lookupName);
 			setIfChanged(data, TruckDTO_.dimensionWidth, entity::setDimensionWidth);

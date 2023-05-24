@@ -1,6 +1,5 @@
 package com.example.truck.infrastructure.security.apikey;
 
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -8,6 +7,8 @@ import org.springframework.security.authentication.InsufficientAuthenticationExc
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.stereotype.Component;
+
+import org.apache.commons.lang3.StringUtils;
 
 @Component
 public class ApiKeyAuthenticationProvider implements AuthenticationProvider {
